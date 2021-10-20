@@ -4,7 +4,7 @@ const notes = [ {
    description: 'Ingredients include 2 eggs...',
    pagesCount: 2,
    isMarked: false,
-   access: []
+   access: [],
    }, {
    id: 2,
    title: 'Workouts',
