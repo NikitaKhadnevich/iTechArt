@@ -10,11 +10,23 @@ const context = { x: 2 };
 function testThis(y) {
    console.log(`x=${this.x}, y=${y}`);
 }
-testThis(100); // x=1, y=100
-
-
+//testThis(100); // x=1, y=100
 const boundFunction = testThis.bind(context);
-console.log(boundFunction(100)); // x=2, y=100
+boundFunction(100); // x=2, y=100
+
+
+function bind(myFunc, myContext) {
+   return function(y) {
+      return myFunc.call(myContext, y)
+      //or
+      return myFunc.apply(myContext, [y])
+      //or
+      return myFunc.bind(myContext)(y)
+   }
+}
+const boundFunction2 = bind(testThis, context);
+boundFunction2(100); // x=2, y=100
+
 
 
 //_______________SubTask 'Б'___________________//
@@ -35,7 +47,7 @@ console.log(boundFunction(100)); // x=2, y=100
       'Voltron can count to 3' //1 + 2
       'Voltron can count to 50' //20 + 30
 
-   let getBind = add.bind({name: false}, 0,1)
+   const getBind = add.bind({name: false}, 0,1)
    console.table(
       getBind(),
       add.call(voltron, 1,2),
