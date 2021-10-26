@@ -45,11 +45,11 @@ function bind(func, data) {
          x: data.x,
          func
       }
-      func(y)
+      WRAP.func(y)
    }
 }
 const boundFunction4 = bind(testThis, context);
-boundFunction3(100);
+boundFunction4(100);
 
 
 //_______________SubTask 'Б'___________________//
