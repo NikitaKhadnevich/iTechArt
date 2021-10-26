@@ -5,7 +5,7 @@
 bind, которая позволяет привязать контекст (значение this) к функции. Пример задания указан ниже. */
 
 window.x = 1;
-const context = { x: 2 };
+var context = { x: 2 };
 
 function testThis(y) {
    console.log(`x=${this.x}, y=${y}`);
@@ -27,6 +27,29 @@ function bind(myFunc, myContext) {
 const boundFunction2 = bind(testThis, context);
 boundFunction2(100); // x=2, y=100
 
+
+
+function bind(func, data) {
+   return function(y) { // added closure
+      data.func = func
+      data.func(y) //call it
+   }
+}
+const boundFunction3 = bind(testThis, context);
+boundFunction3(100); // x=2, y=100
+//---- OR-----//
+
+function bind(func, data) {
+   return function(y) { // added closure
+      const WRAP = {
+         x: data.x,
+         func
+      }
+      func(y)
+   }
+}
+const boundFunction4 = bind(testThis, context);
+boundFunction3(100);
 
 
 //_______________SubTask 'Б'___________________//
