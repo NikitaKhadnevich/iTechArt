@@ -1,4 +1,4 @@
-const notes = [ {
+const NOTES = [ {
    id: 1,
    title: 'Recipe',
    description: 'Ingredients include 2 eggs...',
@@ -31,62 +31,60 @@ const notes = [ {
 
 //_______________SubTask 'А'___________________//
 //---MAP---//
-let done = 'I had done New Key/Value'
+const DONE = 'I had done New Key/Value'
 
 const mapFunc = (basicArr) => {
-   let newArr = basicArr.map(item => {
-      return {...item, done}
+   const newArr = basicArr.map(item => {
+      return {...item, done: DONE}
       }
    ) 
    return newArr// 
 }
-//console.log(`mapFunc`, mapFunc(notes)) // Made it without Poli
+//console.log(`mapFunc`, mapFunc(NOTES)) // Made it without Poli
 
 const poliMap = (basicArr) => {
-   let newArr = []
+   const newArr = []
    for (i = 0; i < basicArr.length; i++) {
-      basicArr[i].data = done 
+      basicArr[i].data = DONE 
       newArr.push(basicArr[i])      
    }
    return newArr
 }
-//console.log('poliMap', poliMap(notes)) //Made with Poli MAP
+//console.log('poliMap', poliMap(NOTES)) //Made with Poli MAP
 
 
 //---FILTER---//
 const filterFunc = (basicArr) => {
-   let newArr = basicArr.filter(item => {
-      return item.isMarked === true
-   })
+   const newArr = basicArr.filter(item => item.isMarked)
    return newArr
 }
-//console.log(`filterFunc`, filterFunc(notes)) // Made it without Poli
+//console.log(`filterFunc`, filterFunc(NOTES)) // Made it without Poli
 
 const polFilter = (basicArr) => {
-   let newArr = []
+   const newArr = []
    for (i = 0; i < basicArr.length; i++) {
       let filterLine = basicArr[i].isMarked
       filterLine !== false ? newArr.push(basicArr[i]) : newArr
    }
    return newArr
 }
-//console.log('polFilter', polFilter(notes)) //Made with Poli FILTER
+//console.log('polFilter', polFilter(NOTES)) //Made with Poli FILTER
 
 
 //---REDUCE---//
 const reducerFunc = (basicArr) => {
-   let newArr = basicArr.reduce((accum, item) => {
+   const newArr = basicArr.reduce((accum, item) => {
       return (
          accum + item.id
       )
    }, 0);
    return [...basicArr, {lengthID: `Итоговая сумма значений id Масива - ${newArr}`}] //Made it without Poli, with final result
 }   
-//console.log('reducerFunc', reducerFunc(notes))
+//console.log('reducerFunc', reducerFunc(NOTES))
 
 
 const polReducer = (basicArr, accum) => {
-   let newArr = []
+   const newArr = []
    for (let i = 0; i < basicArr.length; i++) {
       accum += basicArr[i].id;
       basicArr[i].lengthID = `Текущая сумма значений id Масива - ${accum}`
@@ -94,7 +92,7 @@ const polReducer = (basicArr, accum) => {
    }
    return newArr
 }
-// console.log('polReducer', polReducer(notes, 0)) //Made it with Poli, with intermediate result
+//console.log('polReducer', polReducer(NOTES, 0)) //Made it with Poli, with intermediate result
 
 
 //_______________SubTask 'Б'___________________//
@@ -103,7 +101,7 @@ const polReducer = (basicArr, accum) => {
 */
 
 const poliMapB_1 = (basicArr) => {
-   let newArr = []
+   const newArr = []
    for (i = 0; i < basicArr.length; i++) {
       let ability = {
          id: basicArr[i].id,
@@ -119,21 +117,21 @@ const poliMapB_1 = (basicArr) => {
    }
    return newArr
 }
-// console.log(`poliMapB_1`, poliMapB_1(notes))
+// console.log(`poliMapB_1`, poliMapB_1(NOTES))
 
 
 /* ---2---
 Используя массив и функцию filter, реализованную в предыдущем задании, необходимо получить новый массив, состоящий только из помеченных элементов (isMarked: true).
 */
 const polFilterB_2 = (basicArr) => {
-   let newArr = []
+   const newArr = []
    for (i = 0; i < basicArr.length; i++) {
       let filterLine = basicArr[i].isMarked
       filterLine !== false ? newArr.push(basicArr[i]) : newArr
    }
    return newArr
 }
-// console.log(`polFilterB_2`, polFilterB_2(notes))
+//console.log(`polFilterB_2`, polFilterB_2(NOTES))
 
 
 /* ---3---
@@ -147,15 +145,15 @@ const polReducerB_3 = (basicArr, accum) => {
    }
    return newArr
 }
-// console.log(`polReducerB_3`, polReducerB_3(notes, 0))
+//console.log(`polReducerB_3`, polReducerB_3(NOTES, 0))
 
 
 //_______________SubTask 'В'___________________//
 // Написать функцию, не используя какие-либо библиотеки, которая будет получать массив чисел и возвращать число, которое встречается в этом массиве только один раз. При условии, что этот элемент точно существует и он единственный. Необходимо учитывать сложность алгоритма!//
-const testArray = [1,1,1,2,2,3,4,4,5,5,5,5]
+const TESTARRAY = [1,1,1,2,2,3,4,4,5,5,5,5]
 
 const findSingleNumber1 = (basicArr) => {
-   let uniqData = []
+   const uniqData = []
    for (let i = 0; i < basicArr.length; i++) { //Frst iteration
       let element = basicArr[i]; 
       let counter = 0; //Created helpers
@@ -171,11 +169,11 @@ const findSingleNumber1 = (basicArr) => {
    }
    return uniqData.join(', ') //  based on O(n^2) not good
 }
-//console.log('findSingleNumber, Уникальное число/ла :', findSingleNumber1(testArray))
+//console.log('findSingleNumber, Уникальное число/ла :', findSingleNumber1(TESTARRAY))
 
 
 const findSingleNumber2 = (basicArr) => {
-   let uniqData = basicArr.filter((item) => {
+   const uniqData = basicArr.filter((item) => {
       console.table(basicArr.indexOf(item), basicArr.lastIndexOf(item))
       return basicArr.indexOf(item) === basicArr.lastIndexOf(item) 
       // search from head - indexOf
@@ -185,4 +183,4 @@ const findSingleNumber2 = (basicArr) => {
    return uniqData.join(', ') // to string
 }
 
-//console.log('findSingleNumber2, Уникальное число/ла:', findSingleNumber2(testArray))
+//console.log('findSingleNumber2, Уникальное число/ла:', findSingleNumber2(TESTARRAY))
