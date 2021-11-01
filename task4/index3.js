@@ -3,16 +3,20 @@
 
 createError = () => error = new Error('Time out...');
 createSuccess = () => createSuccess = 'Well done!';
-generatorHelper = () => number = Math.floor(Math.random()*10)*1000;
+generatorHelper = () => {
+  const randomNumber = Math.floor(Math.random()*10)*1000
+  return randomNumber
+};
 
 function generatorCheker(delay) {
-  console.log('Start Number Generator...')
-  console.log(delay)
+  console.log('Start Number Generator...');
+  console.log(delay);
+  const CURRENTTIME = 2000;
   let promise = new Promise((resolve, reject) => {
-     setTimeout(() => {
-        delay <= 2000 ? resolve() : reject()
-     }, delay)
-  })
+    setTimeout(() => {
+        delay <= CURRENTTIME ? resolve() : reject()
+    }, delay)
+  });
   return promise
 }
 
