@@ -1,0 +1,43 @@
+.main__slider {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 594px;
+  background-color: $starAbdHover-color;
+  border-bottom: $slider-border;
+}
+
+.slider-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px;
+}
+
+.slider-item__arrow-left,
+.slider-item__arrow-right {
+  align-self: center;
+}
+
+.slider-item__slide {
+  display: flex;
+  width: 100%;
+}
+
+.slider-item__slide > img {
+  align-self: center;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 53px;
+  animation: appearance-key 1s ease-in;
+}
+
+@keyframes appearance-key {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
