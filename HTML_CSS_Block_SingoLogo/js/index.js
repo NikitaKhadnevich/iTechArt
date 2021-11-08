@@ -5,26 +5,35 @@ window.onload = function () {
   const inc = document.getElementById('inc'); //1. Added endpoints and data for slider
   const dec = document.getElementById('dec');
   const slideRecieverImg = document.getElementById('slideRecieverImg');
-  const ARRDATA = 
+  const SLIDER_PIC = 
     ['./images/slider/Slide1.png',
     './images/slider/Slide2.png']
-  const INITFORSLIDER = 0;
+  const INITIAL_VALUE_SLIDER = 0;
 
 
 const colorChanger = (state) => {  //2. Created bkg changer
     const sliderBkg = document.getElementsByClassName('main__slider')[0];
-    let wrapper = sliderBkg.style;
+    const wrapper = sliderBkg.style;
+    const COLORS = {
+      firstSlide: '#f06c64',
+      secondSlide: '#648BF0'
+    };
+    const BORDERS = {
+      firstSlide: '6px #ea676b solid',
+      secondSlide: '6px solid #648BF0'
+    };
+
     if (state == 0) {
-      wrapper.backgroundColor = '#f06c64';
-      wrapper.borderBottom = '6px #ea676b solid';
+      wrapper.backgroundColor = COLORS.firstSlide;
+      wrapper.borderBottom = BORDERS.firstSlide;
     } else {
-      wrapper.backgroundColor = '#648BF0';
-      wrapper.borderBottom = '6px solid #648BF0';
+      wrapper.backgroundColor = COLORS.secondSlide;
+      wrapper.borderBottom = BORDERS.secondSlide;
     };
   };
 
   const renderCount = (arg) => { //3. Added render-func which will redraw slider's contains
-    const mySlide = ARRDATA[arg];
+    const mySlide = SLIDER_PIC[arg];
     const img = `<img src="${mySlide}" alt='Slider's image'/>`
     slideRecieverImg.innerHTML = img;
     colorChanger(arg);
@@ -37,7 +46,6 @@ const colorChanger = (state) => {  //2. Created bkg changer
       return function() {
         COUNTER < arr.length-1 ?
         COUNTER++ : COUNTER = 0
-        console.log('COUNTER STATE', COUNTER);
         renderCount(COUNTER);
       };
     }
@@ -45,26 +53,25 @@ const colorChanger = (state) => {  //2. Created bkg changer
     function decFunc (arr) {
       return function() {
         COUNTER > 0 ? COUNTER-- : COUNTER = arr.length-1
-        console.log('COUNTER STATE', COUNTER);
         renderCount(COUNTER);
       }
     }
 
-    const increment = incFunc(ARRDATA);
-    const decrement = decFunc(ARRDATA);
+    const increment = incFunc(SLIDER_PIC);
+    const decrement = decFunc(SLIDER_PIC);
 
     inc.addEventListener('click', increment);
     dec.addEventListener('click', decrement);
   }
-  renderCount(INITFORSLIDER); //4. Call it for work
+  renderCount(INITIAL_VALUE_SLIDER); //4. Call it for work
   createInitSlider();
 
 
 //----PORTFOLIO---//
 
-  const renderImage = (obj) => {  //5. created render-func as same as renderCount above ^^^^
+  const renderImage = (dataSource) => {  //5. created render-func as same as renderCount above ^^^^
     const currentImages = document.getElementById('worksImgAccum');
-    let currentArg = obj.arr;
+    let currentArg = dataSource.arr;
     const img = currentArg.reduce((accum, item) => {
       return (
         accum + `<div class="images-data">
@@ -84,9 +91,9 @@ const colorChanger = (state) => {  //2. Created bkg changer
   }
 
   const changePortChecker = (el) => { //7 Created function for highlighting current element's group  (web, graph and stuff like that)
-    const elems = document.getElementsByClassName('sort__item');
-    for (var i = 0; i < elems.length; i++) {
-      elems[i].classList.remove('sort__itemClick');
+    const portfolioElems = document.getElementsByClassName('sort__item');
+    for (let i = 0; i < portfolioElems.length; i++) {
+      portfolioElems[i].classList.remove('sort__itemClick');
     }
     el.currentTarget.classList.add('sort__itemClick');
   }

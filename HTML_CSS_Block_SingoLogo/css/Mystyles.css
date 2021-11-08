@@ -203,6 +203,7 @@ a {
   font-size: 25px;
   text-transform: uppercase;
   letter-spacing: -0.55px;
+  cursor: pointer;
 }
 
 .header__logo > a::after {
@@ -304,6 +305,15 @@ a {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  cursor: pointer;
+}
+
+.slider-item__arrow-left > img {
+  cursor: pointer;
+}
+
+.slider-item__arrow-right > img {
+  cursor: pointer;
 }
 
 .slider-item__slide {
@@ -510,6 +520,7 @@ a {
   padding: 0 6px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .sort__item:hover {
