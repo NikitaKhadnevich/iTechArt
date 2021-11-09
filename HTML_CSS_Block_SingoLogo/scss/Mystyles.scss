@@ -19,10 +19,21 @@
   font-weight: 900;
 }
 
-@import "_reset";
-@import "_header";
-@import "_main";
-@import "_slider";
-@import "_services";
-@import "_portfolio";
-@import "_footer";
+@import "./1020/_reset";
+@import "./1020/_header";
+@import "./1020/_main";
+@import "./1020/_slider";
+@import "./1020/_services";
+@import "./1020/_portfolio";
+@import "./1020/_footer";
+
+@import "./768/header";
+@import "./768/_slider";
+@import "./768/_services";
+@import "./768/_portfolio";
+
+@import "./375/_header";
+@import "./375/_slider";
+@import "./375/_services";
+@import "./375/_portfolio";
+@import "./375/_footer";

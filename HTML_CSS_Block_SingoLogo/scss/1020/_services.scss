@@ -4,7 +4,7 @@ $ServBaseBackground-color: #f2f2f2;
 $ServMain-border: 6px #ffffff solid;
 
 .main__services {
-  min-height: 494px;
+  height: 100%;
   background-color: $ServBaseBackground-color;
   border-bottom: $ServMain-border;
 }
@@ -12,6 +12,7 @@ $ServMain-border: 6px #ffffff solid;
 .services {
   margin: 0 40px;
   margin-top: 58px;
+  margin-bottom: 46px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -82,6 +83,6 @@ $ServMain-border: 6px #ffffff solid;
 .text__advAbout {
   margin-top: 11px;
   font-size: 12px;
-  font-weight: regular;
+  font-weight: "regular";
   line-height: 22px;
 }
