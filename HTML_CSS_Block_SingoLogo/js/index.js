@@ -165,15 +165,12 @@ const createBurgerWrapper = () => {
   const burgerStyle = burgerMenu.style;
 
   function showBurgerContain(e) {
-    if (e.target.id == burgerButton.id && burgerButton.checked == true) {
+    if (e.target.id == burgerButton.id && burgerButton.checked) {
       burgerContains.remove("hideBurgerMenu");
       burgerContains.add("showBurgerMenu");
       burgerStyle.backgroundColor = OVERLAY_COLOR;
       burgerStyle.position = FIX_POSITION;
-    } else if (
-      e.target.id == burgerButton.id &&
-      burgerButton.checked == false
-    ) {
+    } else if (e.target.id == burgerButton.id && !burgerButton.checked) {
       burgerContains.remove("showBurgerMenu");
       burgerContains.add("hideBurgerMenu");
       burgerStyle.backgroundColor = WITHOUT_OVERLAY;
