@@ -1,51 +1,49 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import PropTypes from 'prop-types';
 import { Slide } from '@material-ui/core';
 import useStyles from '../../pages/mainNotes/listNotes/styled';
-import { ButtonSaveChanges, ButtonDelete } from './ActionButtons';
+import ButtonSave from './actionsButtons/ButtonSave';
+import ButtonDelete from './actionsButtons/ButonDelete';
 
 const InputChange = ({
   isChange,
   description,
   saveEditedNote,
   id,
-  deleteNotes,
+  deleteNote,
   index,
   currentState,
 }) => {
-  const [newInputState, setNewInputState] = useState(description);
-  const classes = useStyles();
+  const [updateDescription, setDescription] = useState(description);
+  const { changeInputShow, changeInputHide, textAr, saveChanges } = useStyles();
 
-  const sendNewValue = (e) => {
+  const sendDescription = (e) => {
     // eslint-disable-next-line no-unused-expressions
-    e !== newInputState && e ? setNewInputState(e) : description;
+    e !== updateDescription && e ? setDescription(e) : description;
   };
 
   return (
     <Slide in={isChange}>
-      <Box
-        className={isChange ? classes.changeInputShow : classes.changeInputHide}
-        style={{ marginLeft: '0px' }}
-      >
+      <Box className={isChange ? changeInputShow : changeInputHide}>
         <TextField
-          className={classes.textAr}
+          className={textAr}
           label='Note Description'
           defaultValue={description}
           multiline
           rows={2}
           variant='standard'
-          onChange={(e) => sendNewValue(e.target.value)}
+          onChange={(e) => sendDescription(e.target.value)}
         />
-        <ButtonSaveChanges
-          className={classes.saveChanges}
-          newInputState={newInputState}
+        <ButtonSave
+          className={saveChanges}
+          updateDescription={updateDescription}
           saveEditedNote={saveEditedNote}
           id={id}
         />
         <ButtonDelete
-          deleteNotes={deleteNotes}
+          deleteNote={deleteNote}
           index={index}
           currentState={currentState}
         />
@@ -62,7 +60,7 @@ InputChange.propTypes = {
   description: PropTypes.string,
   id: PropTypes.number,
   index: PropTypes.number,
-  deleteNotes: PropTypes.func,
+  deleteNote: PropTypes.func,
   currentState: PropTypes.string,
 };
 
@@ -72,6 +70,6 @@ InputChange.defaultProps = {
   description: 'description',
   id: 'id',
   index: 'index',
-  deleteNotes: 'deleteNotes',
+  deleteNote: 'deleteNote',
   currentState: 'currentState',
 };

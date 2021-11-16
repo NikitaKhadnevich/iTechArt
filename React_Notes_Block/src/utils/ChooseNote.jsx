@@ -1,7 +1,7 @@
 const chooseNote = (itemId, matchSource) => {
-  let arrNoteReciever = [...matchSource];
-  const toggleItem = (arr, id) => {
-    arrNoteReciever = arr.map((note) =>
+  let arrNoteReciever = matchSource;
+  const toggleItem = (notesArray, id) => {
+    arrNoteReciever = notesArray.map((note) =>
       note.id === id
         ? { ...note, isActive: !note.isActive, isChange: false }
         : { ...note, isActive: false, isChange: false }

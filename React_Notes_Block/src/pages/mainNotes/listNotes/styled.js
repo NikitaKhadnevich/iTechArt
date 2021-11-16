@@ -70,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     width: '100%',
     justifyContent: 'space-between',
+    marginLeft: '0px !important',
   },
 
   textAr: {

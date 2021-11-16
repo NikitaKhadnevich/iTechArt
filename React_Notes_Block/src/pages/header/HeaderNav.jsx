@@ -4,15 +4,13 @@ import IconName from '../../components/header/IconName';
 import useStyles from './styled';
 
 const HeaderNav = () => {
-  const classes = useStyles();
+  const { header } = useStyles();
   return (
-    <>
-      <AppBar className={classes.header}>
-        <Toolbar>
-          <IconName />
-        </Toolbar>
-      </AppBar>
-    </>
+    <AppBar className={header}>
+      <Toolbar>
+        <IconName />
+      </Toolbar>
+    </AppBar>
   );
 };
 

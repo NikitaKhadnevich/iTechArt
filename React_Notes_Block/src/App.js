@@ -5,11 +5,11 @@ import HeaderNavCont from './pages/header/HeaderNavCont';
 import useStyles from './pages/mainNotes/styled';
 
 function App() {
-  const classes = useStyles();
+  const { appContainer } = useStyles();
   return (
     <>
       <CssBaseline />
-      <main className={classes.appContainer}>
+      <main className={appContainer}>
         <HeaderNavCont />
         <MainNotesCont />
       </main>

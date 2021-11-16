@@ -6,12 +6,13 @@ import { INITIALNOTE } from '../../../config/constants/initNoteData';
 
 const AboutNote = ({ mainNotes }) => {
   const [aboutData, setAboutData] = useState();
-  const classes = useStyles();
+  const { aboutWrapper } = useStyles();
 
   const addDescription = () => {
-    const sortDescription = mainNotes.filter((item) => item.isActive);
-    if (sortDescription.length > 0) {
-      setAboutData(sortDescription[0].description);
+    const [sortDescription] = mainNotes.filter((item) => item.isActive);
+
+    if (sortDescription) {
+      setAboutData(sortDescription.description);
     } else {
       setAboutData(INITIALNOTE);
     }
@@ -22,11 +23,9 @@ const AboutNote = ({ mainNotes }) => {
   }, [mainNotes]);
 
   return (
-    <>
-      <Container className={classes.aboutWrapper}>
-        <Typography variant='body1'>{aboutData}</Typography>
-      </Container>
-    </>
+    <Container className={aboutWrapper}>
+      <Typography variant='body1'>{aboutData}</Typography>
+    </Container>
   );
 };
 

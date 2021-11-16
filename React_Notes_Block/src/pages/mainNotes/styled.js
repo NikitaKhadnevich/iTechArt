@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   mainContainer: {
     boxSizing: 'border-box',
     margin: '0 auto',
-    padding: '0 5px',
+    padding: '0 5px !important',
     marginTop: '10px',
     width: '100%',
     display: 'flex',

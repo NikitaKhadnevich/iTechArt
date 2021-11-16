@@ -1,26 +1,24 @@
 import React, { useState, Suspense } from 'react';
+import { Container } from '@mui/material';
 import useStyles from './styled';
-
-const ListNotes = React.lazy(() => import('./listNotes/ListNotes'));
-const AboutNote = React.lazy(() => import('./aboutNote/AboutNote'));
+import LazyListNotes from './listNotes/LazyListNotes';
+import LazyAboutNotes from './aboutNote/LazyAboutNotes';
 
 const MainNotesCont = () => {
-  const classes = useStyles();
+  const { mainContainer, spiner } = useStyles();
   const [mainNotes, setMainNotes] = useState([]);
 
   const sentAbout = (state) => {
-    setMainNotes(() => [...state]);
+    setMainNotes(state);
   };
 
   return (
-    <>
-      <article className={classes.mainContainer}>
-        <Suspense fallback={<div className={classes.spiner}>Loading...</div>}>
-          <AboutNote mainNotes={mainNotes} />
-          <ListNotes sentAbout={sentAbout} />
-        </Suspense>
-      </article>
-    </>
+    <Container className={mainContainer}>
+      <Suspense fallback={<div className={spiner}>Loading...</div>}>
+        <LazyAboutNotes mainNotes={mainNotes} />
+        <LazyListNotes sentAbout={sentAbout} />
+      </Suspense>
+    </Container>
   );
 };
 

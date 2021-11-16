@@ -1,5 +1,5 @@
 const saveEditedNote = (buttonId, matchSource, value) => {
-  let arrNoteReciever = [...matchSource];
+  let arrNoteReciever = matchSource;
   const toggleItem = (arr, id) => {
     arrNoteReciever = arr.map((note) =>
       note.id === id
