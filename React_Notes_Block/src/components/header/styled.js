@@ -6,23 +6,19 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.primary.dark,
   },
   toolbar: {
-    display: 'flex',
+    display: 'grid',
     margin: '0 10px',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    gap: '1rem',
+    justifyContent: 'space-between',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
   },
   iconBlock: {
+    maxWidth: '140px',
     justifyContent: 'center',
-    alignSelf: 'center',
-    alignItem: 'center',
     display: 'flex',
-    margin: '0 20px',
-
     '& *': {
       height: 'fitContent',
       alignSelf: 'center',
-      justifySelf: 'center',
+      justifySekf: 'center',
       fontWeight: '400',
     },
   },

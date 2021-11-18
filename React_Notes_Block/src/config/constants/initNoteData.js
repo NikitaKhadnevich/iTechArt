@@ -7,6 +7,7 @@ const WAHA_NOTES = [
     date: '06.11.2021 18:12:40',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const WAHA_NOTES = [
     date: '09.11.2021 14:10:12',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const WAHA_NOTES = [
     date: '03.10.2021 4:19:12',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const WAHA_NOTES = [
     date: '03.09.2021 7:40:14',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ const WAHA_NOTES = [
     date: '22.09.2021 10:18:12',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ const WAHA_NOTES = [
     date: '22.10.2021 10:58:54',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ const WAHA_NOTES = [
     date: '2.09.2021 22:28:12',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ const WAHA_NOTES = [
     date: '21.10.2021 12:37:43',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 9,
@@ -79,6 +87,7 @@ const WAHA_NOTES = [
     date: '16.09.2021 11:11:23',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
 ];
 

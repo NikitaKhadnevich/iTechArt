@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   appContainer: {
+    minHeight: '100vh',
     margin: '5px',
     boxSizing: 'border-box',
     boxShadow: `0px 0px 10px ${theme.palette.primary.dark}`,
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
     padding: '0 5px !important',
     marginTop: '10px',
-    width: '100%',
+    maxWidth: '100% !important',
     display: 'flex',
     height: 'fit-content',
     flexDirection: 'column',

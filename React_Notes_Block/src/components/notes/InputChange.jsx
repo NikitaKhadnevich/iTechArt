@@ -36,17 +36,20 @@ const InputChange = ({
           variant='standard'
           onChange={(e) => sendDescription(e.target.value)}
         />
-        <ButtonSave
-          className={saveChanges}
-          updateDescription={updateDescription}
-          saveEditedNote={saveEditedNote}
-          id={id}
-        />
-        <ButtonDelete
-          deleteNote={deleteNote}
-          index={index}
-          currentState={currentState}
-        />
+        <Box>
+          <ButtonSave
+            className={saveChanges}
+            updateDescription={updateDescription}
+            saveEditedNote={saveEditedNote}
+            id={id}
+          />
+          <ButtonDelete
+            deleteNote={deleteNote}
+            index={index}
+            id={id}
+            currentState={currentState}
+          />
+        </Box>
       </Box>
     </Slide>
   );

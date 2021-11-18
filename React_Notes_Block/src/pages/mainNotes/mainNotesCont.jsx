@@ -1,11 +1,12 @@
 import React, { useState, Suspense } from 'react';
 import { Container } from '@mui/material';
 import useStyles from './styled';
+import Spinner from '../../components/spinner/spinner';
 import LazyListNotes from './listNotes/LazyListNotes';
 import LazyAboutNotes from './aboutNote/LazyAboutNotes';
 
 const MainNotesCont = () => {
-  const { mainContainer, spiner } = useStyles();
+  const { mainContainer } = useStyles();
   const [mainNotes, setMainNotes] = useState([]);
 
   const sentAbout = (state) => {
@@ -14,7 +15,13 @@ const MainNotesCont = () => {
 
   return (
     <Container className={mainContainer}>
-      <Suspense fallback={<div className={spiner}>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div>
+            <Spinner />
+          </div>
+        }
+      >
         <LazyAboutNotes mainNotes={mainNotes} />
         <LazyListNotes sentAbout={sentAbout} />
       </Suspense>
