@@ -1,7 +1,8 @@
 import React from 'react';
 import BookIcon from '@mui/icons-material/Book';
 import { Typography, Box } from '@material-ui/core';
-import useStyles from '../../pages/header/styled';
+
+import useStyles from './styled';
 
 const IconName = () => {
   const classes = useStyles();

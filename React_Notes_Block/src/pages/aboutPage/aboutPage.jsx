@@ -1,7 +1,9 @@
 import React from 'react';
 import { Typography, Container } from '@material-ui/core';
-import aboutData from '../../config/constants/aboutData';
+
 import useStyles from './styled';
+
+import { aboutData } from './aboutReciever';
 
 const AboutPage = () => {
   const { aboutDesc } = useStyles();

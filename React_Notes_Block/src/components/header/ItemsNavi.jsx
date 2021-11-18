@@ -1,7 +1,8 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import useStyles from '../../pages/header/styled';
+
+import useStyles from './styled';
 
 const ItemsNavi = () => {
   const classes = useStyles();

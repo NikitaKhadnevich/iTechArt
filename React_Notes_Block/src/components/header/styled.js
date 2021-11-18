@@ -1,16 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  header: {
-    position: 'relative',
-    background: theme.palette.primary.dark,
-  },
-  toolbar: {
-    display: 'grid',
-    margin: '0 10px',
-    justifyContent: 'space-between',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-  },
   iconBlock: {
     maxWidth: '140px',
     justifyContent: 'center',

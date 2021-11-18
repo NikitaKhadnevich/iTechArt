@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { INITIALNOTE } from '../../../config/constants/initNoteData';
+import INITIALNOTE from './aboutNoteReciever';
 import AboutNoteCont from './AboutNoteCont';
 
 const AboutNote = ({ mainNotes }) => {

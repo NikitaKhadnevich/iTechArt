@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Slide } from '@material-ui/core';
-import useStyles from '../../pages/mainNotes/listNotes/styled';
-import ButtonSave from './actionsButtons/ButtonSave';
-import ButtonDelete from './actionsButtons/ButonDelete';
+import { Zoom } from '@material-ui/core';
+
+import useStyles from './styled';
+
+import { ButtonSave, ButtonDelete } from './ButtonReciever';
 
 const InputChange = ({
   isChange,
@@ -17,7 +18,7 @@ const InputChange = ({
   currentState,
 }) => {
   const [updateDescription, setDescription] = useState(description);
-  const { changeInputShow, changeInputHide, textAr, saveChanges } = useStyles();
+  const { changeInputShow, changeInputHide, textAr } = useStyles();
 
   const sendDescription = (e) => {
     // eslint-disable-next-line no-unused-expressions
@@ -25,7 +26,7 @@ const InputChange = ({
   };
 
   return (
-    <Slide in={isChange}>
+    <Zoom in={isChange}>
       <Box className={isChange ? changeInputShow : changeInputHide}>
         <TextField
           className={textAr}
@@ -38,7 +39,6 @@ const InputChange = ({
         />
         <Box>
           <ButtonSave
-            className={saveChanges}
             updateDescription={updateDescription}
             handleSaveNote={handleSaveNote}
             id={id}
@@ -51,7 +51,7 @@ const InputChange = ({
           />
         </Box>
       </Box>
-    </Slide>
+    </Zoom>
   );
 };
 

@@ -55,26 +55,15 @@ const useStyles = makeStyles((theme) => ({
 
   noteActions: {
     width: '100%',
+    maxHeight: 'fitContent',
     margin: 0,
     marginTop: '5px',
     background: theme.palette.primary.light,
     display: 'flex',
   },
-
-  changeInputHide: {
-    display: 'none',
-  },
-
-  changeInputShow: {
-    height: '100%',
-    display: 'flex',
-    width: '100%',
-    justifyContent: 'space-between',
-    marginLeft: '0px !important',
-  },
-
-  textAr: {
-    width: '100%',
+  noAddedNotes: {
+    position: 'relative',
+    minHeight: '100vh',
   },
 }));
 

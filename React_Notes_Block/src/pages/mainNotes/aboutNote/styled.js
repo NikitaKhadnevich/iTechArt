@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     minwidth: '100%',
     minHeight: '100px',
     height: 'fitContent',
-    top: '25px',
+    top: '15px',
     position: 'sticky',
     background: theme.palette.primary.main,
     zIndex: 2,

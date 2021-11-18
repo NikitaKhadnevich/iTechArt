@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Typography, Container } from '@material-ui/core';
+
 import useStyles from './styled';
 
 const AboutNoteCont = ({ aboutData }) => {

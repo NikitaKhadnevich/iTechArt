@@ -1,12 +1,13 @@
+/* eslint-disable camelcase */
 import React, { Suspense } from 'react';
 import { Container } from '@material-ui/core';
 
 import useStyles from './styled';
 
-import { Spiner } from './aboutReciever';
-import LazyAboutPage from './LazyAboutPage';
+import LazyAboutPage from './LazyVisit404';
+import { Spiner } from './visitReciever';
 
-const AboutPageCont = () => {
+const Visit404Cont = () => {
   const { mainContainer } = useStyles();
 
   return (
@@ -18,4 +19,4 @@ const AboutPageCont = () => {
   );
 };
 
-export default AboutPageCont;
+export default Visit404Cont;

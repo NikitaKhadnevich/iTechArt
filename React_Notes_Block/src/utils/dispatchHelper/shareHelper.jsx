@@ -5,7 +5,6 @@ const shareHelper = (noteId, currentArray) => {
     ...item,
     sharedTime: timeNow,
   }));
-
   return sharedTimeArr;
 };
 
