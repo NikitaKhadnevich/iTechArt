@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Container } from '@material-ui/core';
 import useStyles from './styled';
 import Spiner from '../../components/spinner/spinner';
-import LazyAboutPage from './LazyListNotes';
+import LazyAboutPage from './LazyAboutPage';
 
 const AboutPageCont = () => {
   const { mainContainer } = useStyles();

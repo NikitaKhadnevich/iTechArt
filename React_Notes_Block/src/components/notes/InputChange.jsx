@@ -10,9 +10,9 @@ import ButtonDelete from './actionsButtons/ButonDelete';
 const InputChange = ({
   isChange,
   description,
-  saveEditedNote,
+  handleSaveNote,
   id,
-  deleteNote,
+  handleDelete,
   index,
   currentState,
 }) => {
@@ -40,11 +40,11 @@ const InputChange = ({
           <ButtonSave
             className={saveChanges}
             updateDescription={updateDescription}
-            saveEditedNote={saveEditedNote}
+            handleSaveNote={handleSaveNote}
             id={id}
           />
           <ButtonDelete
-            deleteNote={deleteNote}
+            handleDelete={handleDelete}
             index={index}
             id={id}
             currentState={currentState}
@@ -59,20 +59,20 @@ export default InputChange;
 
 InputChange.propTypes = {
   isChange: PropTypes.bool,
-  saveEditedNote: PropTypes.func,
+  handleSaveNote: PropTypes.func,
   description: PropTypes.string,
   id: PropTypes.number,
   index: PropTypes.number,
-  deleteNote: PropTypes.func,
+  handleDelete: PropTypes.func,
   currentState: PropTypes.string,
 };
 
 InputChange.defaultProps = {
   isChange: 'isChange',
-  saveEditedNote: 'saveEditedNote',
+  handleSaveNote: 'handleSaveNote',
   description: 'description',
   id: 'id',
   index: 'index',
-  deleteNote: 'deleteNote',
+  handleDelete: 'handleDelete',
   currentState: 'currentState',
 };
