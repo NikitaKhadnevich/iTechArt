@@ -24,7 +24,7 @@ export const ListActive = styled(
   borderRadius: '7px',
   background: appTheme.palette.primary.light,
   outline: `2px solid ${appTheme.palette.primary.dark}`,
-  boxShadow: `0px 0px 10px 5px ${appTheme.palette.primary.dark}`,
+  boxShadow: `0px 0px 10px 6px ${appTheme.palette.primary.dark}`,
 });
 
 export const ListNoActive = styled(
