@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { Slide } from '@material-ui/core';
-import useStyles from '../../pages/mainNotes/listNotes/styled';
-import ButtonSave from './actionsButtons/ButtonSave';
-import ButtonDelete from './actionsButtons/ButonDelete';
+import { Zoom } from '@material-ui/core';
+
+import ChangeInputShow, { ChangeInputHide, TextAr } from './styled';
+
+import { ButtonSave, ButtonDelete } from './ButtonReciever';
 
 const InputChange = ({
   isChange,
   description,
-  saveEditedNote,
+  handleSaveNote,
   id,
-  deleteNote,
+  handleDelete,
   index,
   currentState,
 }) => {
   const [updateDescription, setDescription] = useState(description);
-  const { changeInputShow, changeInputHide, textAr, saveChanges } = useStyles();
 
   const sendDescription = (e) => {
     // eslint-disable-next-line no-unused-expressions
@@ -25,30 +24,57 @@ const InputChange = ({
   };
 
   return (
-    <Slide in={isChange}>
-      <Box className={isChange ? changeInputShow : changeInputHide}>
-        <TextField
-          className={textAr}
-          label='Note Description'
-          defaultValue={description}
-          multiline
-          rows={2}
-          variant='standard'
-          onChange={(e) => sendDescription(e.target.value)}
-        />
-        <ButtonSave
-          className={saveChanges}
-          updateDescription={updateDescription}
-          saveEditedNote={saveEditedNote}
-          id={id}
-        />
-        <ButtonDelete
-          deleteNote={deleteNote}
-          index={index}
-          currentState={currentState}
-        />
-      </Box>
-    </Slide>
+    <Zoom in={isChange}>
+      {isChange ? (
+        <ChangeInputShow>
+          <TextAr
+            label='Note Description'
+            defaultValue={description}
+            multiline
+            rows={2}
+            variant='standard'
+            onChange={(e) => sendDescription(e.target.value)}
+          />
+          <Box>
+            <ButtonSave
+              updateDescription={updateDescription}
+              handleSaveNote={handleSaveNote}
+              id={id}
+            />
+            <ButtonDelete
+              handleDelete={handleDelete}
+              index={index}
+              id={id}
+              currentState={currentState}
+            />
+          </Box>
+        </ChangeInputShow>
+      ) : (
+        <ChangeInputHide>
+          <TextAr
+            label='Note Description'
+            defaultValue={description}
+            multiline
+            rows={2}
+            variant='standard'
+            onChange={(e) => sendDescription(e.target.value)}
+          />
+          <Box>
+            <ButtonSave
+              updateDescription={updateDescription}
+              handleSaveNote={handleSaveNote}
+              id={id}
+            />
+            <ButtonDelete
+              handleDelete={handleDelete}
+              index={index}
+              id={id}
+              currentState={currentState}
+            />
+          </Box>
+        </ChangeInputHide>
+      )}
+    </Zoom>
   );
 };
 
@@ -56,20 +82,20 @@ export default InputChange;
 
 InputChange.propTypes = {
   isChange: PropTypes.bool,
-  saveEditedNote: PropTypes.func,
+  handleSaveNote: PropTypes.func,
   description: PropTypes.string,
   id: PropTypes.number,
   index: PropTypes.number,
-  deleteNote: PropTypes.func,
+  handleDelete: PropTypes.func,
   currentState: PropTypes.string,
 };
 
 InputChange.defaultProps = {
   isChange: 'isChange',
-  saveEditedNote: 'saveEditedNote',
+  handleSaveNote: 'handleSaveNote',
   description: 'description',
   id: 'id',
   index: 'index',
-  deleteNote: 'deleteNote',
+  handleDelete: 'handleDelete',
   currentState: 'currentState',
 };
