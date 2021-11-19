@@ -1,13 +1,19 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { styled } from '@mui/styles';
+import { Container } from '@material-ui/core';
+import appTheme from '../../globalStyles';
 
-const useStyles = makeStyles((theme) => ({
-  mainContainer: {
-    minHeight: '100vh',
-    background: theme.palette.primary.main,
-  },
-  aboutDesc: {
-    paddingTop: '30px',
-  },
-}));
+const MainContainer = styled(
+  Container,
+  appTheme
+)({
+  minHeight: '100vh',
+  background: appTheme.palette.primary.main,
+});
+export default MainContainer;
 
-export default useStyles;
+export const AboutDesc = styled(
+  Container,
+  appTheme
+)({
+  paddingTop: '30px',
+});

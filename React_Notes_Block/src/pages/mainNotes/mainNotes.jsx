@@ -2,9 +2,8 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState, useEffect, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Container } from '@mui/material';
 
-import useStyles from './styled';
+import MainNoteContainer from './styled';
 
 import {
   Spinner,
@@ -26,7 +25,6 @@ import {
 } from './mainNotesReciever';
 
 const MainNotes = () => {
-  const { mainContainer } = useStyles();
   const [mainNotes, setMainNotes] = useState([]);
   const [noteList, setNoteList] = useState(WAHA_NOTES);
 
@@ -78,7 +76,7 @@ const MainNotes = () => {
   }, [noteList]);
 
   return (
-    <Container className={mainContainer}>
+    <MainNoteContainer>
       <Suspense fallback={<Spinner />}>
         <LazyAboutNotes mainNotes={mainNotes} />
         <LazyListNotes
@@ -92,7 +90,7 @@ const MainNotes = () => {
           noteList={noteList}
         />
       </Suspense>
-    </Container>
+    </MainNoteContainer>
   );
 };
 

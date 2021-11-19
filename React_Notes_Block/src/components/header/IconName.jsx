@@ -1,17 +1,13 @@
 import React from 'react';
 import BookIcon from '@mui/icons-material/Book';
-import { Typography, Box } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
-import useStyles from './styled';
+import IconBlock from './styled';
 
-const IconName = () => {
-  const classes = useStyles();
-  return (
-    <Box className={classes.iconBlock}>
-      <BookIcon />
-      <Typography variant='h6'>Waha Books</Typography>
-    </Box>
-  );
-};
-
+const IconName = () => (
+  <IconBlock>
+    <BookIcon />
+    <Typography variant='h6'>Waha Books</Typography>
+  </IconBlock>
+);
 export default IconName;

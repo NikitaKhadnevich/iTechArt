@@ -1,59 +1,77 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { styled } from '@mui/styles';
+import { Typography, Grid, Box, Container } from '@material-ui/core';
+import appTheme from '../../globalStyles';
 
-const useStyles = makeStyles((theme) => ({
-  gridNotes: {
-    marginTop: '15px',
-    '& h5': {
-      textAlign: 'center',
-    },
+const GridShared = styled(
+  Grid,
+  appTheme
+)({
+  marginTop: '15px',
+  '& h5': {
+    textAlign: 'center',
   },
-  mainContainer: {
-    minHeight: '100vh',
-    background: theme.palette.primary.main,
-  },
-  noteText: {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-    width: '100%',
-    margin: '0',
-    alignSelf: 'center',
-    gridTemplateColumns: 'auto auto auto',
-    justifyContent: 'start',
-  },
+});
+export default GridShared;
 
-  title: {
-    display: 'flex',
-    justifyContent: 'center',
-    width: 'fitContent',
-    margin: '0',
-    color: theme.palette.secondary.light,
-    msJustifySelf: 'start',
-  },
-  description: {
-    maxHeight: 'fitContent',
-    color: theme.palette.secondary.dark,
-    fontWeight: '600',
-    width: 'fitContent',
-    textAlign: 'justify',
-  },
-  shareDate: {
-    color: theme.palette.secondary.light,
-  },
-  noteActions: {
-    width: '100%',
-    margin: 0,
-    marginTop: '5px',
-    background: theme.palette.primary.light,
-    display: 'flex',
-  },
-  textAr: {
-    width: '100%',
-  },
-  noSharedNotes: {
-    position: 'relative',
-    minHeight: '100vh',
-  },
-}));
+export const MainSharedCont = styled(
+  Container,
+  appTheme
+)({
+  minHeight: '100vh',
+  background: appTheme.palette.primary.main,
+});
 
-export default useStyles;
+export const NoteText = styled(
+  Box,
+  appTheme
+)({
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100%',
+  width: '100%',
+  margin: '0',
+  alignSelf: 'center',
+  gridTemplateColumns: 'auto auto auto',
+  justifyContent: 'start',
+  borderRadius: '7px',
+  border: `1px solid ${appTheme.palette.primary.dark}`,
+});
+
+export const Title = styled(
+  Typography,
+  appTheme
+)({
+  display: 'flex',
+  justifyContent: 'center',
+  width: 'fitContent',
+  margin: '0',
+  color: appTheme.palette.secondary.light,
+  msJustifySelf: 'start',
+});
+
+export const Description = styled(
+  Typography,
+  appTheme
+)({
+  maxHeight: 'fitContent',
+  color: appTheme.palette.secondary.dark,
+  fontWeight: '600',
+  width: 'fitContent',
+  textAlign: 'justify',
+});
+
+export const ShareDate = styled(
+  Typography,
+  appTheme
+)({
+  color: appTheme.palette.secondary.light,
+});
+
+export const NoSharedNotes = styled(
+  Container,
+  appTheme
+)({
+  paddingTop: '15px',
+  position: 'relative',
+  minHeight: '100vh',
+});

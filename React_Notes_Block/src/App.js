@@ -1,35 +1,39 @@
 import React from 'react';
-import { CssBaseline, Container } from '@material-ui/core';
+import { CssBaseline } from '@material-ui/core';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
 } from 'react-router-dom';
-import MainNotes from './pages/mainNotes/mainNotes';
-import HeaderNavCont from './pages/header/HeaderNavCont';
-import useStyles from './styledApp';
-import SharedNotesCont from './pages/sharedNotePage/sharedNotesCont';
-import AboutPageCont from './pages/aboutPage/aboutPageCont';
-import Visit404Cont from './pages/visit404/Visit404Cont';
+import AppContainer from './styledApp';
+
+import {
+  MainNotes,
+  HeaderNavCont,
+  SharedNotesCont,
+  AboutPageCont,
+  Visit404Cont,
+  ROUTERS,
+} from './ArrReciever';
 
 function App() {
-  const { appContainer } = useStyles();
+  const { notes, notFound, sharedNotes, about } = ROUTERS;
 
   return (
     <>
       <CssBaseline />
       <Router>
-        <Container className={appContainer}>
+        <AppContainer>
           <HeaderNavCont />
           <Routes>
-            <Route path='*' element={<Navigate replace to='/not-found' />} />
-            <Route path='/not-found' element={<Visit404Cont />} />
-            <Route path='/notes' element={<MainNotes />} />
-            <Route path='/shared-notes' element={<SharedNotesCont />} />
-            <Route path='/about' element={<AboutPageCont />} />
+            <Route path='*' element={<Navigate replace to={notFound} />} />
+            <Route path={notFound} element={<Visit404Cont />} />
+            <Route path={notes} element={<MainNotes />} />
+            <Route path={sharedNotes} element={<SharedNotesCont />} />
+            <Route path={about} element={<AboutPageCont />} />
           </Routes>
-        </Container>
+        </AppContainer>
       </Router>
     </>
   );

@@ -1,69 +1,62 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { Typography, Grid, Box, Container } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { useSelector } from 'react-redux';
 
-import useStyles from './styled';
-
-import { sharedArr, errorMessages } from './sharedNoteReciever';
+import { sharedArr, ERROR_MESSAGES } from './sharedNoteReciever';
+import GridShared, {
+  NoteText,
+  Title,
+  Description,
+  ShareDate,
+  NoSharedNotes,
+} from './styled';
 
 const SharedNotes = () => {
   const sharedNote = useSelector(sharedArr);
-  const {
-    gridNotes,
-    listItem,
-    noteText,
-    title,
-    description,
-    shareDate,
-    noSharedNotes,
-  } = useStyles();
-  const { noNotes } = errorMessages;
+  const { noNotes } = ERROR_MESSAGES;
 
   return (
-    <Grid container spacing={2} className={gridNotes}>
+    <GridShared container spacing={2}>
       {sharedNote.length ? (
         sharedNote.map((item) => (
           <Grid item xs={12}>
             <List
               sx={{ width: '100%', padding: '0px' }}
-              className={listItem}
               key={`${item.id}sharelist`}
             >
-              <Box className={noteText} key={`${item.id}sharebox`}>
+              <NoteText key={`${item.id}sharebox`}>
                 <ListItem>
-                  <Typography variant='body2' className={title} id={item.title}>
+                  <Title variant='body2' id={item.title}>
                     {item.title}
-                  </Typography>
+                  </Title>
                 </ListItem>
 
                 <ListItem sx={{ paddingTop: '0', paddingBottom: '0' }}>
-                  <Typography variant='body2' className={description}>
-                    {item.description}
-                  </Typography>
+                  <Description variant='body2'>{item.description}</Description>
                 </ListItem>
 
                 <ListItem>
-                  <Typography variant='body2' className={shareDate}>
+                  <ShareDate variant='body2'>
                     shared {item.sharedTime}
-                  </Typography>
+                  </ShareDate>
                 </ListItem>
-              </Box>
+              </NoteText>
             </List>
           </Grid>
         ))
       ) : (
         <Grid item xs={12}>
-          <Container className={noSharedNotes}>
+          <NoSharedNotes>
             <Typography component='h5' variant='h5' align='center'>
               {noNotes}
             </Typography>
-          </Container>
+          </NoSharedNotes>
         </Grid>
       )}
-    </Grid>
+    </GridShared>
   );
 };
 

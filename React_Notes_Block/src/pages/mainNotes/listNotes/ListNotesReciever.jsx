@@ -3,6 +3,6 @@ import {
   ButtonShare,
 } from '../../../components/notes/ButtonReciever';
 import InputChange from '../../../components/notes/InputChange';
-import errorMessages from '../../../config/constants/errorMessages';
+import ERROR_MESSAGES from '../../../config/constants/errorMessages';
 
-export { ButtonEdit, ButtonShare, InputChange, errorMessages };
+export { ButtonEdit, ButtonShare, InputChange, ERROR_MESSAGES };

@@ -1,37 +1,48 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { styled } from '@mui/styles';
+import { Box } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import appTheme from '../../globalStyles';
 
-const useStyles = makeStyles((theme) => ({
-  iconBlock: {
-    maxWidth: '140px',
-    justifyContent: 'center',
-    display: 'flex',
-    '& *': {
-      height: 'fitContent',
-      alignSelf: 'center',
-      justifySekf: 'center',
-      fontWeight: '400',
-    },
+const IconBlock = styled(
+  Box,
+  appTheme
+)({
+  maxWidth: '140px',
+  justifyContent: 'center',
+  display: 'flex',
+  '& *': {
+    height: 'fitContent',
+    alignSelf: 'center',
+    justifySekf: 'center',
+    fontWeight: '400',
   },
-  navigation: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    '& h6': {
-      margin: '5px 10px',
-    },
-    '& *': {
-      transition: '.5s',
-    },
-    '& *:hover': {
-      background: theme.palette.primary.main,
-      borderRadius: '20px',
-      transition: '.5s',
-    },
-  },
-  navLink: {
-    textDecoration: 'none',
-    color: 'black',
-  },
-}));
+});
+export default IconBlock;
 
-export default useStyles;
+export const Navigation = styled(
+  Box,
+  appTheme
+)({
+  display: 'flex',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+  '& h6': {
+    margin: '5px 10px',
+  },
+  '& *': {
+    transition: '.5s',
+  },
+  '& *:hover': {
+    background: appTheme.palette.primary.light,
+    borderRadius: '20px',
+    transition: '.5s',
+  },
+});
+
+export const NavLink = styled(
+  Link,
+  appTheme
+)({
+  textDecoration: 'none',
+  color: appTheme.palette.secondary.dark,
+});

@@ -1,4 +1,4 @@
-import errorMessages from '../../config/constants/errorMessages';
+import ERROR_MESSAGES from '../../config/constants/errorMessages';
 import Spiner from '../../components/spinner/spinner';
 
-export { errorMessages, Spiner };
+export { ERROR_MESSAGES, Spiner };

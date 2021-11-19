@@ -10,7 +10,6 @@ const AboutNote = ({ mainNotes }) => {
 
   const addDescription = () => {
     const [sortDescription] = mainNotes.filter((item) => item.isActive);
-
     if (sortDescription) {
       setAboutData(sortDescription.description);
     } else {

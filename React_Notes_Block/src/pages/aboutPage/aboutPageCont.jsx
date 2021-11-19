@@ -1,21 +1,16 @@
 import React, { Suspense } from 'react';
-import { Container } from '@material-ui/core';
 
-import useStyles from './styled';
+import MainContainer from './styled';
 
 import { Spiner } from './aboutReciever';
 import LazyAboutPage from './LazyAboutPage';
 
-const AboutPageCont = () => {
-  const { mainContainer } = useStyles();
-
-  return (
-    <Container className={mainContainer}>
-      <Suspense fallback={<Spiner />}>
-        <LazyAboutPage />
-      </Suspense>
-    </Container>
-  );
-};
+const AboutPageCont = () => (
+  <MainContainer>
+    <Suspense fallback={<Spiner />}>
+      <LazyAboutPage />
+    </Suspense>
+  </MainContainer>
+);
 
 export default AboutPageCont;

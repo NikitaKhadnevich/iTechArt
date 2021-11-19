@@ -1,18 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, Container } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
-import useStyles from './styled';
+import AboutWrapperDesc from './styled';
 
-const AboutNoteCont = ({ aboutData }) => {
-  const { aboutWrapper } = useStyles();
-
-  return (
-    <Container className={aboutWrapper}>
-      <Typography variant='body1'>{aboutData}</Typography>
-    </Container>
-  );
-};
+const AboutNoteCont = ({ aboutData }) => (
+  <AboutWrapperDesc>
+    <Typography variant='body1'>{aboutData}</Typography>
+  </AboutWrapperDesc>
+);
 
 AboutNoteCont.propTypes = {
   aboutData: PropTypes.string,

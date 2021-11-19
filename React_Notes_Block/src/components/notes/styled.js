@@ -1,21 +1,32 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { styled } from '@mui/styles';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import appTheme from '../../globalStyles';
 
-// eslint-disable-next-line no-unused-vars
-const useStyles = makeStyles((theme) => ({
-  changeInputHide: {
-    display: 'flex',
-    maxHeight: '45px',
-  },
-  changeInputShow: {
-    height: '100%',
-    display: 'flex',
-    width: '100%',
-    justifyContent: 'space-between',
-    marginLeft: '-30px !important',
-  },
-  textAr: {
-    width: '100%',
-  },
-}));
+const ChangeInputShow = styled(
+  Box,
+  appTheme
+)({
+  height: '100%',
+  display: 'flex',
+  width: '100%',
+  justifyContent: 'space-between',
+  marginLeft: '-30px !important',
+});
+export default ChangeInputShow;
 
-export default useStyles;
+export const ChangeInputHide = styled(
+  Box,
+  appTheme
+)({
+  display: 'flex',
+  maxidth: '0px !important',
+  maxHeight: '45px',
+});
+
+export const TextAr = styled(
+  TextField,
+  appTheme
+)({
+  width: '100%',
+});

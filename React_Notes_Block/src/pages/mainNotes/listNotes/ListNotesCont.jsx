@@ -1,19 +1,22 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-unused-expressions */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, Grid, Box, Container } from '@material-ui/core';
-import List from '@mui/material/List';
+import { Typography, Grid, Box } from '@material-ui/core';
 import ListItem from '@mui/material/ListItem';
-import Stack from '@mui/material/Stack';
-
-import useStyles from './styled';
+import GridMain, {
+  ListActive,
+  ListNoActive,
+  NoteText,
+  Title,
+  Description,
+  NoteActions,
+  NoAddedNotes,
+} from './styled';
 
 import {
   ButtonEdit,
   ButtonShare,
   InputChange,
-  errorMessages,
+  ERROR_MESSAGES,
 } from './ListNotesReciever';
 
 const ListNotes = ({
@@ -26,55 +29,69 @@ const ListNotes = ({
   callToEditNote,
   noteList,
 }) => {
-  const {
-    gridNotes,
-    listItemActive,
-    listItem,
-    noteText,
-    title,
-    description,
-    noteActions,
-  } = useStyles();
-
-  const { noAddedNotes } = errorMessages;
+  const { noAddedNotes } = ERROR_MESSAGES;
 
   return (
-    <Grid container spacing={2} className={gridNotes}>
+    <GridMain container spacing={2}>
       {noteList.length ? (
         noteList.map((item, index) => (
-          <Grid item xs={12} sm={4} md={4}>
-            <List
-              onClick={() => handleItem(item.id, noteList, chooseNote)}
-              sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
-              className={item.isActive ? listItemActive : listItem}
-              key={`${item.id}gridlist`}
-            >
-              <Box className={noteText} key={`${item.id}listbox`}>
-                <ListItem>
-                  <Typography variant='h6' className={title} id={item.title}>
-                    {item.title}
-                  </Typography>
-                </ListItem>
+          <Grid item xs={12} sm={6} md={4}>
+            {item.isActive ? (
+              <ListActive
+                onClick={() => handleItem(item.id, noteList, chooseNote)}
+                sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
+                key={`${item.id}gridlist`}
+              >
+                <NoteText key={`${item.id}listbox`}>
+                  <ListItem>
+                    <Title variant='h6' id={item.title}>
+                      {item.title}
+                    </Title>
+                  </ListItem>
 
-                <ListItem sx={{ paddingTop: '0', paddingBottom: '0' }}>
-                  <Typography variant='body2' className={description}>
-                    {sliceDescription(item.description)}
-                  </Typography>
-                </ListItem>
+                  <ListItem sx={{ paddingTop: '0', paddingBottom: '0' }}>
+                    <Description variant='body2'>
+                      {sliceDescription(item.description)}
+                    </Description>
+                  </ListItem>
 
-                <ListItem>
-                  <Typography variant='subtitle2'>{item.date}</Typography>
-                </ListItem>
-              </Box>
-            </List>
+                  <ListItem>
+                    <Typography variant='subtitle2'>{item.date}</Typography>
+                  </ListItem>
+                </NoteText>
+              </ListActive>
+            ) : (
+              <ListNoActive
+                onClick={() => handleItem(item.id, noteList, chooseNote)}
+                sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
+                key={`${item.id}gridlist`}
+              >
+                <NoteText key={`${item.id}listbox`}>
+                  <ListItem>
+                    <Title variant='h6' id={item.title}>
+                      {item.title}
+                    </Title>
+                  </ListItem>
 
-            <Stack
+                  <ListItem sx={{ paddingTop: '0', paddingBottom: '0' }}>
+                    <Description variant='body2'>
+                      {sliceDescription(item.description)}
+                    </Description>
+                  </ListItem>
+
+                  <ListItem>
+                    <Typography variant='subtitle2'>{item.date}</Typography>
+                  </ListItem>
+                </NoteText>
+              </ListNoActive>
+            )}
+
+            <NoteActions
               key={`${item.id}buttonStack`}
               direction='row'
               spacing={-3}
               alignItems='flex-start'
               justifyContent='flex-start'
-              className={noteActions}
             >
               <Box key={`${item.id}edit`}>
                 <ButtonEdit
@@ -100,17 +117,17 @@ const ListNotes = ({
                 index={index}
                 currentState={noteList}
               />
-            </Stack>
+            </NoteActions>
           </Grid>
         ))
       ) : (
-        <Container className={noAddedNotes}>
+        <NoAddedNotes>
           <Typography component='h5' variant='h5' align='center'>
             {noAddedNotes}
           </Typography>
-        </Container>
+        </NoAddedNotes>
       )}
-    </Grid>
+    </GridMain>
   );
 };
 
