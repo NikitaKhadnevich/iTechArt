@@ -1,7 +1,9 @@
 /* eslint-disable camelcase */
-import { Typography } from '@material-ui/core';
 import React from 'react';
+import { Typography } from '@material-ui/core';
+
 import { Visit404Text } from './styled';
+
 import { ERROR_MESSAGES } from './visitReciever';
 
 const Visit404 = () => {
