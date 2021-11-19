@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Typography, Grid, Box } from '@material-ui/core';
 import ListItem from '@mui/material/ListItem';
+
 import GridMain, {
   ListActive,
   ListNoActive,
