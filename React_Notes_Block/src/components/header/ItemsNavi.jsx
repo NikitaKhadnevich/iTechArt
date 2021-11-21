@@ -10,7 +10,7 @@ const ItemsNavi = () => (
       <Typography variant='h6'>Notes</Typography>
     </NavLink>
     <NavLink to={sharedNotes} data-path={sharedNotes}>
-      <Typography variant='h6'>SharedNotes</Typography>
+      <Typography variant='h6'>Shared Notes</Typography>
     </NavLink>
     <NavLink to={about} data-path={about}>
       <Typography variant='h6'>About</Typography>
