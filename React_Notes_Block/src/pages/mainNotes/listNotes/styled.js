@@ -17,9 +17,9 @@ export const ListActive = styled(
   appTheme
 )({
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   alignItems: 'center',
-  minHeight: 'fitContent',
+  minHeight: 'fit-content',
   boxSizing: 'border-box',
   borderRadius: '7px',
   background: appTheme.palette.primary.light,
@@ -34,7 +34,7 @@ export const ListNoActive = styled(
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  minHeight: '140px',
+  minHeight: 'fit-content',
   boxSizing: 'border-box',
   borderRadius: '7px',
   background: appTheme.palette.primary.main,
@@ -46,11 +46,16 @@ export const NoteText = styled(
   Box,
   appTheme
 )({
-  display: 'flex',
+  display: 'flex !important',
   flexDirection: 'column',
-  width: '100%',
-  margin: '0',
-  alignSelf: 'center',
+  width: '100% !important',
+  margin: '0 !important',
+  alignSelf: 'center !important',
+  maxHeight: 'fit-content !importnat',
+  overflow: 'auto',
+  boxShadow: 'none',
+  outline: 'none',
+  background: `${appTheme.palette.primary.main} !important`,
 });
 
 export const Title = styled(
@@ -62,16 +67,17 @@ export const Title = styled(
   width: '100%',
   margin: '0',
   textAlign: 'center',
+  color: `${appTheme.palette.secondary.main} !important`,
 });
 
 export const Description = styled(
   Typography,
   appTheme
 )({
-  maxHeight: '20px',
-  overflow: 'hidden',
-  display: 'block',
-  color: appTheme.palette.primary.dark,
+  maxHeight: 'auto',
+  overflow: 'hidden !important',
+  display: 'block !important',
+  color: `${appTheme.palette.primary.dark} !important`,
 });
 
 export const NoteActions = styled(
@@ -79,11 +85,29 @@ export const NoteActions = styled(
   appTheme
 )({
   width: '100%',
-  maxHeight: 'fitContent',
+  maxHeight: 'fit-content',
   margin: 0,
   marginTop: '5px',
   background: appTheme.palette.primary.light,
   display: 'flex',
+});
+
+export const BottonChange = styled(
+  Box,
+  appTheme
+)({
+  display: 'block',
+  minHeight: '40px !important',
+  justifyContent: 'start',
+  position: 'static',
+  margin: '0',
+  width: 'fit-content',
+  boxShadow: 'none',
+  borderRadius: '0px',
+  outline: 'none !important',
+  zIndex: '0',
+  textAlign: 'start',
+  background: 'none',
 });
 
 export const NoAddedNotes = styled(

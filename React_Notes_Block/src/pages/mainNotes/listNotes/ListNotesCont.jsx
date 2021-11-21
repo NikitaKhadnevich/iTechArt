@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, Grid, Box } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import ListItem from '@mui/material/ListItem';
 
 import GridMain, {
@@ -10,6 +10,7 @@ import GridMain, {
   Title,
   Description,
   NoteActions,
+  BottonChange,
   NoAddedNotes,
 } from './styled';
 
@@ -57,7 +58,12 @@ const ListNotes = ({
                   </ListItem>
 
                   <ListItem>
-                    <Typography variant='subtitle2'>{item.date}</Typography>
+                    <Typography
+                      variant='subtitle2'
+                      style={{ color: 'primary.main !important' }}
+                    >
+                      {item.date}
+                    </Typography>
                   </ListItem>
                 </NoteText>
               </ListActive>
@@ -65,9 +71,9 @@ const ListNotes = ({
               <ListNoActive
                 onClick={() => handleItem(item.id, noteList, chooseNote)}
                 sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
-                key={`${item.id}gridlist`}
+                key={`${item.id}gridlistNoActive`}
               >
-                <NoteText key={`${item.id}listbox`}>
+                <NoteText key={`${item.id}listboxNoActive`}>
                   <ListItem>
                     <Title variant='h6' id={item.title}>
                       {item.title}
@@ -94,7 +100,7 @@ const ListNotes = ({
               alignItems='flex-start'
               justifyContent='flex-start'
             >
-              <Box key={`${item.id}edit`}>
+              <BottonChange key={`${item.id}edit`}>
                 <ButtonEdit
                   handleItem={handleItem}
                   callToEditNote={callToEditNote}
@@ -106,7 +112,7 @@ const ListNotes = ({
                   noteList={noteList}
                   id={item.id}
                 />
-              </Box>
+              </BottonChange>
 
               <InputChange
                 key={`${item.id}input`}

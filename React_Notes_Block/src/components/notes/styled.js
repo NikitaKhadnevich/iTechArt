@@ -10,8 +10,8 @@ const ChangeInputShow = styled(
   height: '100%',
   display: 'flex',
   width: '100%',
-  justifyContent: 'space-between',
-  marginLeft: '-30px !important',
+  justifyContent: 'space-between !important',
+  marginLeft: '-30px !important important',
 });
 export default ChangeInputShow;
 
@@ -19,8 +19,7 @@ export const ChangeInputHide = styled(
   Box,
   appTheme
 )({
-  display: 'flex',
-  maxidth: '0px !important',
+  display: 'block',
   maxHeight: '45px',
 });
 

@@ -6,9 +6,11 @@ const HeaderNav = styled(
   AppBar,
   appTheme
 )({
+  minHeight: '0px !important',
+  maxHeight: 'fit-content !important',
   position: 'relative !important',
   background: `${appTheme.palette.primary.dark} !important`,
-  margin: '5px 0px !important',
+  margin: '5px 0px',
 });
 export default HeaderNav;
 
@@ -18,8 +20,8 @@ export const ToolbarNav = styled(
 )({
   display: 'flex',
   margin: '5px 0px',
-  justifyContent: 'center',
+  justifyContent: 'center !important',
   flexWrap: 'wrap',
   gap: '1rem',
-  padding: '0 !important',
+  padding: '0',
 });

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -21,9 +20,7 @@ const AboutNote = ({ mainNotes }) => {
     addDescription();
   }, [mainNotes]);
 
-  return (
-    <AboutNoteCont aboutData={aboutData} />
-  );
+  return <AboutNoteCont aboutData={aboutData} />;
 };
 
 AboutNote.propTypes = {

@@ -10,6 +10,7 @@ const IconBlock = styled(
   maxWidth: '140px',
   justifyContent: 'center',
   display: 'flex',
+  minHeight: '0px !important',
   '& *': {
     height: 'fitContent',
     alignSelf: 'center',
