@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography } from '@material-ui/core';
 
 import { AboutDesc } from './styled';
-import { aboutData } from './aboutReciever';
+import { aboutData } from './aboutReceiver';
 
 const AboutPage = () => (
   <AboutDesc>

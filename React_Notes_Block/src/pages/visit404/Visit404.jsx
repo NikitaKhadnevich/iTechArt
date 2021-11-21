@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core';
 
 import { Visit404Text } from './styled';
 
-import { ERROR_MESSAGES } from './visitReciever';
+import { ERROR_MESSAGES } from './visitReceiver';
 
 const Visit404 = () => {
   const { visit404 } = ERROR_MESSAGES;

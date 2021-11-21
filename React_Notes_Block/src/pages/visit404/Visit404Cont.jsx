@@ -4,7 +4,7 @@ import React, { Suspense } from 'react';
 import Visit404Main from './styled';
 
 import LazyAboutPage from './LazyVisit404';
-import { Spiner } from './visitReciever';
+import { Spiner } from './visitReceiver';
 
 const Visit404Cont = () => (
   <Visit404Main>

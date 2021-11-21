@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import { notes, sharedNotes, about } from './headerReciever';
+import { notes, sharedNotes, about } from './headerReceiver';
 
 import { Navigation, NavLink } from './styled';
 

@@ -21,7 +21,7 @@ import {
   getToLocalStorage,
   shareHelper,
   removeShareNote,
-} from './mainNotesReciever';
+} from './mainNotesReceiver';
 
 const MainNotes = () => {
   const [mainNotes, setMainNotes] = useState([]);

@@ -5,7 +5,7 @@ import { Zoom } from '@material-ui/core';
 
 import ChangeInputShow, { ChangeInputHide, TextAr } from './styled';
 
-import { ButtonSave, ButtonDelete } from './ButtonReciever';
+import { ButtonSave, ButtonDelete } from './ButtonReceiver';
 
 const InputChange = ({
   isChange,

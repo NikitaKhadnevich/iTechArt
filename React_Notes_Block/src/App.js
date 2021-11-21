@@ -15,7 +15,7 @@ import {
   AboutPageCont,
   Visit404Cont,
   ROUTERS,
-} from './ArrReciever';
+} from './AppReceiver';
 
 function App() {
   const { notes, notFound, sharedNotes, about } = ROUTERS;

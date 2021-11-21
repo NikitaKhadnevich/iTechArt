@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 
 import MainContainer from './styled';
 
-import { Spiner } from './aboutReciever';
+import { Spiner } from './aboutReceiver';
 import LazyAboutPage from './LazyAboutPage';
 
 const AboutPageCont = () => (

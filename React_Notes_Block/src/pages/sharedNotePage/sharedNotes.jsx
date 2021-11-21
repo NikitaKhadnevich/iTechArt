@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 
 import { MainSharedCont } from './styled';
 
-import { Spiner } from './sharedNoteReciever';
+import { Spiner } from './sharedNoteReceiver';
 import LazyShareNotes from './LazyShareNotes';
 
 const SharedNotesCont = () => (

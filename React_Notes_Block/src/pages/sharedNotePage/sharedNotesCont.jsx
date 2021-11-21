@@ -5,7 +5,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { useSelector } from 'react-redux';
 
-import { sharedArr, ERROR_MESSAGES } from './sharedNoteReciever';
+import { sharedArr, ERROR_MESSAGES } from './sharedNoteReceiver';
 import GridShared, {
   NoteText,
   Title,

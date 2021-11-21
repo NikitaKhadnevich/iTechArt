@@ -19,7 +19,7 @@ import {
   ButtonShare,
   InputChange,
   ERROR_MESSAGES,
-} from './ListNotesReciever';
+} from './ListNotesReceiver';
 
 const ListNotes = ({
   handleItem,

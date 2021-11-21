@@ -1,7 +1,7 @@
 import {
   ButtonEdit,
   ButtonShare,
-} from '../../../components/notes/ButtonReciever';
+} from '../../../components/notes/ButtonReceiver';
 import InputChange from '../../../components/notes/InputChange';
 import ERROR_MESSAGES from '../../../config/constants/errorMessages';
 

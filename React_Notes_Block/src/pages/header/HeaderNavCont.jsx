@@ -2,7 +2,7 @@ import React from 'react';
 
 import HeaderNav, { ToolbarNav } from './styled';
 
-import { IconName, ItemsNavi } from './headerReciever';
+import { IconName, ItemsNavi } from './headerReceiver';
 
 const HeaderNavCont = () => (
   <HeaderNav>
