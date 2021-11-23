@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { CssBaseline } from '@material-ui/core';
 import {
   BrowserRouter as Router,
@@ -7,6 +9,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 import AppContainer from './styledApp';
+import PrivateRoute from './utils/routing/PrivateRoute';
 
 import {
   MainNotes,
@@ -14,11 +17,13 @@ import {
   SharedNotesCont,
   AboutPageCont,
   Visit404Cont,
+  SignUp,
+  SignIn,
   ROUTERS,
 } from './AppReceiver';
 
 function App() {
-  const { notes, notFound, sharedNotes, about } = ROUTERS;
+  const { notes, notFound, sharedNotes, about, signUp, signIn } = ROUTERS;
 
   return (
     <>
@@ -29,9 +34,28 @@ function App() {
           <Routes>
             <Route path='*' element={<Navigate replace to={notFound} />} />
             <Route path={notFound} element={<Visit404Cont />} />
-            <Route path={notes} element={<MainNotes />} />
-            <Route path={sharedNotes} element={<SharedNotesCont />} />
             <Route path={about} element={<AboutPageCont />} />
+            <Route path={signUp} element={<SignUp />} />
+            <Route path={signIn} element={<SignIn />} />
+
+            <Route
+              exact
+              path={notes}
+              element={
+                <PrivateRoute>
+                  <MainNotes />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              exact
+              path={sharedNotes}
+              element={
+                <PrivateRoute>
+                  <SharedNotesCont />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         </AppContainer>
       </Router>
