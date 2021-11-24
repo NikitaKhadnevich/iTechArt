@@ -4,8 +4,8 @@ import SharedNotesCont from './pages/sharedNotePage/sharedNotesCont';
 import AboutPageCont from './pages/aboutPage/aboutPageCont';
 import Visit404Cont from './pages/visit404/Visit404Cont';
 import ROUTERS from './config/routers/routers';
-import SignUp from './components/forms/SignUp';
-import SignIn from './components/forms/SignIn';
+import FormikUp from './components/forms/FormikWrappers/FormikUp';
+import FormikIn from './components/forms/FormikWrappers/FormikIn';
 
 export {
   MainNotes,
@@ -14,6 +14,6 @@ export {
   AboutPageCont,
   Visit404Cont,
   ROUTERS,
-  SignUp,
-  SignIn,
+  FormikUp,
+  FormikIn,
 };

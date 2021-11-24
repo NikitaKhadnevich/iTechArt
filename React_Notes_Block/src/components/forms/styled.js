@@ -1,8 +1,9 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-unused-vars */
 import { styled } from '@mui/styles';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import ButtonUnstyled from '@mui/core/ButtonUnstyled';
 import Grid from '@mui/material/Grid';
 import appTheme from '../../globalStyles';
 
@@ -31,6 +32,7 @@ const FormBox = styled(
 )({
   background: appTheme.palette.primary.light,
   width: '100%',
+  marginBottom: '15px',
 });
 
 const FormGrid = styled(
@@ -41,7 +43,7 @@ const FormGrid = styled(
 });
 
 const FormButton = styled(
-  ButtonUnstyled,
+  Button,
   appTheme
 )({
   backgroundColor: appTheme.palette.secondary.main,

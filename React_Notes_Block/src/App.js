@@ -17,8 +17,8 @@ import {
   SharedNotesCont,
   AboutPageCont,
   Visit404Cont,
-  SignUp,
-  SignIn,
+  FormikUp,
+  FormikIn,
   ROUTERS,
 } from './AppReceiver';
 
@@ -35,8 +35,8 @@ function App() {
             <Route path='*' element={<Navigate replace to={notFound} />} />
             <Route path={notFound} element={<Visit404Cont />} />
             <Route path={about} element={<AboutPageCont />} />
-            <Route path={signUp} element={<SignUp />} />
-            <Route path={signIn} element={<SignIn />} />
+            <Route path={signUp} element={<FormikUp />} />
+            <Route path={signIn} element={<FormikIn />} />
 
             <Route
               exact

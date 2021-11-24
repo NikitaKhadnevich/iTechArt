@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
+
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
@@ -12,7 +13,7 @@ import {
   FormButton,
 } from './styled';
 
-export default function SignIn() {
+const SignIn = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -29,7 +30,7 @@ export default function SignIn() {
         <Avatar sx={{ m: 1, bgcolor: 'red' }}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component='h1' variant='h5'>
+        <Typography component='h1' variant='h6'>
           Sign In
         </Typography>
         <FormBox
@@ -69,4 +70,5 @@ export default function SignIn() {
       </SignBox>
     </SignContainer>
   );
-}
+};
+export default SignIn;
