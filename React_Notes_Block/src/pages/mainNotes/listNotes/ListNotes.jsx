@@ -35,7 +35,7 @@ const ListNotes = ({
 
   return (
     <GridMain container spacing={2}>
-      {noteList.length ? (
+      {noteList ? (
         noteList.map((item, index) => (
           <Grid item xs={12} sm={6} md={4}>
             {item.isActive ? (

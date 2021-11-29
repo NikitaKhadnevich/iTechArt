@@ -1,13 +1,13 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-unused-expressions */
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import MainNoteContainer from './styled';
 
 import {
-  Spinner,
-  LazyListNotes,
-  LazyAboutNotes,
+  ListWrapper,
+  AboutNoteContainer,
   GET_SHARED_POST,
   GET_UPDATE_SHARED_POST,
   sharedArr,
@@ -21,9 +21,10 @@ import {
   getToLocalStorage,
   shareHelper,
   removeShareNote,
+  NOTES_LIST,
 } from './mainNotesReceiver';
 
-const MainNotes = () => {
+const MainNotesContainer = () => {
   const [mainNotes, setMainNotes] = useState([]);
   const [noteList, setNoteList] = useState(WAHA_NOTES);
 
@@ -56,41 +57,39 @@ const MainNotes = () => {
     dispatch(GET_UPDATE_SHARED_POST(savedSharedNotes));
   };
 
-  useEffect(() => {
-    const localNote = getToLocalStorage();
-    if (localNote) {
-      setNoteList(localNote);
-    }
-  }, []);
-
   const sentAbout = (state) => {
     setMainNotes(state);
   };
 
   useEffect(() => {
+    const localNote = getToLocalStorage(NOTES_LIST);
+    if (localNote) {
+      setNoteList(localNote);
+    }
+  }, []);
+
+  useEffect(() => {
     sentAbout(noteList);
     !noteList.length
-      ? setToLocalStorage(WAHA_NOTES)
-      : setToLocalStorage(noteList);
+      ? setToLocalStorage(WAHA_NOTES, NOTES_LIST)
+      : setToLocalStorage(noteList, NOTES_LIST);
   }, [noteList]);
 
   return (
     <MainNoteContainer>
-      <Suspense fallback={<Spinner />}>
-        <LazyAboutNotes mainNotes={mainNotes} />
-        <LazyListNotes
-          handleItem={handleItem}
-          handleShare={handleShare}
-          handleSaveNote={handleSaveNote}
-          handleDelete={handleDelete}
-          chooseNote={chooseNote}
-          sliceDescription={sliceDescription}
-          callToEditNote={callToEditNote}
-          noteList={noteList}
-        />
-      </Suspense>
+      <AboutNoteContainer mainNotes={mainNotes} />
+      <ListWrapper
+        handleItem={handleItem}
+        handleShare={handleShare}
+        handleSaveNote={handleSaveNote}
+        handleDelete={handleDelete}
+        chooseNote={chooseNote}
+        sliceDescription={sliceDescription}
+        callToEditNote={callToEditNote}
+        noteList={noteList}
+      />
     </MainNoteContainer>
   );
 };
 
-export default MainNotes;
+export default MainNotesContainer;

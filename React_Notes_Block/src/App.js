@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CssBaseline } from '@material-ui/core';
 import {
@@ -9,41 +9,72 @@ import {
   Navigate,
 } from 'react-router-dom';
 import AppContainer from './styledApp';
-import PrivateRoute from './utils/routing/PrivateRoute';
 
 import {
-  MainNotes,
-  HeaderNavCont,
-  SharedNotesCont,
-  AboutPageCont,
-  Visit404Cont,
+  MainNotesContainer,
+  HeaderNav,
+  SharedWrapper,
+  AboutWrapper,
+  VisitWrapper,
   FormikUp,
   FormikIn,
   ROUTERS,
+  SET_AUTH_USER_DATA,
+  IS_SIGN_IN,
+  SetLocalHelper,
+  PrivateRoute,
+  PrivateSignRoute,
 } from './AppReceiver';
 
 function App() {
   const { notes, notFound, sharedNotes, about, signUp, signIn } = ROUTERS;
+  const dispatch = useDispatch();
+  const [authData, setAuthData] = useState([]);
+  const [authState, setAuthState] = useState('');
+
+  useEffect(() => {
+    SetLocalHelper(setAuthData, setAuthState);
+  }, []);
+
+  useEffect(() => {
+    dispatch(SET_AUTH_USER_DATA(authData));
+    dispatch(IS_SIGN_IN(authState));
+  }, [authState, authData]);
 
   return (
     <>
       <CssBaseline />
       <Router>
         <AppContainer>
-          <HeaderNavCont />
+          <HeaderNav />
           <Routes>
             <Route path='*' element={<Navigate replace to={notFound} />} />
-            <Route path={notFound} element={<Visit404Cont />} />
-            <Route path={about} element={<AboutPageCont />} />
-            <Route path={signUp} element={<FormikUp />} />
-            <Route path={signIn} element={<FormikIn />} />
-
+            <Route path={notFound} element={<VisitWrapper />} />
+            <Route path={about} element={<AboutWrapper />} />
+            <Route
+              exact
+              path={signUp}
+              element={
+                <PrivateSignRoute>
+                  <FormikUp />
+                </PrivateSignRoute>
+              }
+            />
+            <Route
+              exact
+              path={signIn}
+              element={
+                <PrivateSignRoute>
+                  <FormikIn />
+                </PrivateSignRoute>
+              }
+            />
             <Route
               exact
               path={notes}
               element={
                 <PrivateRoute>
-                  <MainNotes />
+                  <MainNotesContainer />
                 </PrivateRoute>
               }
             />
@@ -52,7 +83,7 @@ function App() {
               path={sharedNotes}
               element={
                 <PrivateRoute>
-                  <SharedNotesCont />
+                  <SharedWrapper />
                 </PrivateRoute>
               }
             />

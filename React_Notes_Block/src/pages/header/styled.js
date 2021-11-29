@@ -2,7 +2,7 @@ import { styled } from '@mui/styles';
 import { AppBar, Toolbar } from '@material-ui/core';
 import appTheme from '../../globalStyles';
 
-const HeaderNav = styled(
+const HeaderNavigation = styled(
   AppBar,
   appTheme
 )({
@@ -12,7 +12,7 @@ const HeaderNav = styled(
   background: `${appTheme.palette.primary.dark} !important`,
   margin: '5px 0px',
 });
-export default HeaderNav;
+export default HeaderNavigation;
 
 export const ToolbarNav = styled(
   Toolbar,

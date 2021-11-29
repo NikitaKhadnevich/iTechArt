@@ -1,6 +1,5 @@
-import Spinner from '../../components/spinner/spinner';
-import LazyListNotes from './listNotes/LazyListNotes';
-import LazyAboutNotes from './aboutNote/LazyAboutNotes';
+/* eslint-disable no-unused-vars */
+import AboutNoteContainer from './aboutNote/AboutNoteContainer';
 import {
   GET_SHARED_POST,
   GET_UPDATE_SHARED_POST,
@@ -11,16 +10,25 @@ import chooseNote, { callToEditNote } from '../../utils/ChooseNote';
 import saveEditedNote from '../../utils/SaveEditedNote';
 import sliceDescription from '../../utils/SliceDescription';
 import deleteNote from '../../utils/DeleteNote';
-import setToLocalStorage, {
+import {
+  setToLocalStorage,
   getToLocalStorage,
 } from '../../utils/localStorage/SetGetLocStor';
 import shareHelper from '../../utils/dispatchHelper/shareHelper';
 import removeShareNote from '../../utils/dispatchHelper/removeShareNote';
+import ListWrapper from './listNotes/ListWrapper';
+import LazyListNotes from './listNotes/index';
+import { Spinner } from './listNotes/ListNotesReceiver';
+import {
+  NOTES_LIST,
+  AUTH_LOCAL_DATA,
+  AUTH_LOCAL_STATUS,
+} from '../../config/constants/localStoreKeys';
 
 export {
-  Spinner,
   LazyListNotes,
-  LazyAboutNotes,
+  ListWrapper,
+  AboutNoteContainer,
   GET_SHARED_POST,
   GET_UPDATE_SHARED_POST,
   sharedArr,
@@ -34,4 +42,8 @@ export {
   getToLocalStorage,
   shareHelper,
   removeShareNote,
+  Spinner,
+  NOTES_LIST,
+  AUTH_LOCAL_DATA,
+  AUTH_LOCAL_STATUS,
 };

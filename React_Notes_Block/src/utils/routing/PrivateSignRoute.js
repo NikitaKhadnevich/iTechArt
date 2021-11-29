@@ -9,15 +9,15 @@ import {
   AUTH_LOCAL_STATUS,
 } from './routingReceiver';
 
-function PrivateRoute({ children }) {
+function PrivateSignRoute({ children }) {
   const isSignInApp = useSelector(isSignIn);
-  const { signIn } = ROUTERS;
+  const { notes } = ROUTERS;
 
   const localAuth = getToLocalStorage(AUTH_LOCAL_STATUS);
   if (!isSignInApp && !localAuth) {
-    return <Navigate to={signIn} />;
+    return children;
   }
-  return children;
+  return <Navigate to={notes} />;
 }
 
-export default PrivateRoute;
+export default PrivateSignRoute;

@@ -1,11 +1,11 @@
-const setToLocalStorage = (targetState) => {
-  localStorage.setItem('NoteData', JSON.stringify(targetState));
+const setToLocalStorage = (targetState, localName) => {
+  localStorage.setItem(localName, JSON.stringify(targetState));
 };
 
-export const getToLocalStorage = () => {
-  const raw = localStorage.getItem('NoteData');
+const getToLocalStorage = (localName) => {
+  const raw = localStorage.getItem(localName);
   const noteData = JSON.parse(raw);
   return noteData;
 };
 
-export default setToLocalStorage;
+export { setToLocalStorage, getToLocalStorage };
