@@ -1,10 +1,10 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import { Zoom } from '@material-ui/core';
 
-import ChangeInputShow, { ChangeInputHide, TextAr } from './styled';
-
+import { ChangeInputShow, ChangeInputHide, TextAr } from './styled';
 import { ButtonSave, ButtonDelete } from './ButtonReceiver';
 
 const InputChange = ({
@@ -17,9 +17,7 @@ const InputChange = ({
   currentState,
 }) => {
   const [updateDescription, setDescription] = useState(description);
-
   const sendDescription = (e) => {
-    // eslint-disable-next-line no-unused-expressions
     e !== updateDescription && e ? setDescription(e) : description;
   };
 

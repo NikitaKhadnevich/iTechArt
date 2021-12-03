@@ -33,6 +33,19 @@ import {
   AUTH_LOCAL_STATUS,
   AUTH_LOCAL_DATA,
 } from '../../config/constants/localStoreKeys';
+import SignUpError from './SignAvatars/SignUpError';
+import SignUpSuccess from './SignAvatars/SignUpSuccess';
+
+import SignEmail from './SignInputs/SIgnUpEmail';
+import SignUpFirstName from './SignInputs/SIgnUpFirstName';
+import SignUpLastName from './SignInputs/SIgnUpLastName';
+import SignUpBirth from './SignInputs/SIgnUpBirth';
+import SignPassword from './SignInputs/SIgnUpPassword';
+import SignUpConfirmPass from './SignInputs/SIgnUpConfirmPass';
+
+import SignInError from './SignAvatars/SignInError';
+import SignInInfo from './SignAvatars/SignInInfo';
+import SignInMessage from './SignAvatars/SignInMessage';
 
 const { signIn, signUp, notes, about } = ROUTERS;
 
@@ -65,4 +78,15 @@ export {
   setToLocalStorage,
   AUTH_LOCAL_STATUS,
   AUTH_LOCAL_DATA,
+  SignUpError,
+  SignUpSuccess,
+  SignEmail,
+  SignUpFirstName,
+  SignUpLastName,
+  SignUpBirth,
+  SignPassword,
+  SignUpConfirmPass,
+  SignInError,
+  SignInInfo,
+  SignInMessage,
 };

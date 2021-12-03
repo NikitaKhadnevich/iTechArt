@@ -5,9 +5,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Avatar from '@mui/material/Avatar';
 import appTheme from '../../globalStyles';
 
-const SignContainer = styled(
+const SignWrapper = styled(
   Container,
   appTheme
 )({
@@ -15,7 +16,7 @@ const SignContainer = styled(
   margin: '0 auto',
   paddingBottom: '15px',
 });
-export default SignContainer;
+export default SignWrapper;
 
 const SignBox = styled(
   Box,
@@ -24,6 +25,21 @@ const SignBox = styled(
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+});
+
+const AvatarInfoMessage = styled(
+  Avatar,
+  appTheme
+)({
+  background: 'red',
+});
+
+const AvatarSuccessMessage = styled(
+  Avatar,
+  appTheme
+)({
+  marginTop: '15px',
+  background: appTheme.palette.primary.dark,
 });
 
 const FormBox = styled(
@@ -66,4 +82,4 @@ const FormButton = styled(
   },
 });
 
-export { SignContainer, SignBox, FormBox, FormGrid, FormButton };
+export { SignWrapper, SignBox, FormBox, FormGrid, FormButton };

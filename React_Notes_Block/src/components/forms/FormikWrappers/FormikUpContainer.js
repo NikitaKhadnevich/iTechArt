@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { Container } from '@material-ui/core';
 import { useQuery, useMutation } from 'react-query';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 import { isValid } from 'date-fns';
 import SignUp from '../SignUp';
@@ -23,13 +22,13 @@ import {
 
 const FormikUp = () => {
   const dispatch = useDispatch();
-  const { hasAlready } = ERROR_MESSAGES;
-  const MIN_ARR_LENGTH = 1;
   const navToAuth = useNavigate();
   const [isFetch, setFetch] = useState(true);
+  const { hasAlready } = ERROR_MESSAGES;
+  const MIN_ARR_LENGTH = 1;
 
   const { isLoading, error, data, isFetching } = useQuery('GetUsers', () =>
-    fetch(baseURL).then((resUsers) => resUsers.json())
+    fetch(baseURL).then((responseUsers) => responseUsers.json())
   );
   const { mutateAsync } = useMutation(
     (formdata) => runPOSTuser(baseURL, formdata),
@@ -58,19 +57,17 @@ const FormikUp = () => {
   });
 
   return (
-    <>
-      <Container>
-        <SignUp
-          formik={formik}
-          hasAlready={hasAlready}
-          setFetch={setFetch} // Will make fetch onSubmit Click. In future
-          error={error}
-          isLoading={isLoading}
-          isFetching={isFetching}
-          querryData={data}
-        />
-      </Container>
-    </>
+    <Container>
+      <SignUp
+        formik={formik}
+        hasAlready={hasAlready}
+        setFetch={setFetch} // Will make fetch onSubmit Click. In future
+        error={error}
+        isLoading={isLoading}
+        isFetching={isFetching}
+        querryData={data}
+      />
+    </Container>
   );
 };
 

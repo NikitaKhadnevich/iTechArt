@@ -4,7 +4,7 @@ import {
   GET_SHARED_POST,
   GET_UPDATE_SHARED_POST,
 } from '../../api/sharedToolkit/sharedToolkit';
-import { sharedArr } from '../../api/sharedToolkit/sharedSelectors';
+import { sharedNotes } from '../../api/sharedToolkit/sharedSelectors';
 import WAHA_NOTES from '../../config/constants/initNoteData';
 import chooseNote, { callToEditNote } from '../../utils/ChooseNote';
 import saveEditedNote from '../../utils/SaveEditedNote';
@@ -18,20 +18,28 @@ import shareHelper from '../../utils/dispatchHelper/shareHelper';
 import removeShareNote from '../../utils/dispatchHelper/removeShareNote';
 import ListWrapper from './listNotes/ListWrapper';
 import LazyListNotes from './listNotes/index';
-import { Spinner } from './listNotes/ListNotesReceiver';
+import { Spinner, ERROR_MESSAGES } from './listNotes/ListNotesReceiver';
 import {
   NOTES_LIST,
   AUTH_LOCAL_DATA,
   AUTH_LOCAL_STATUS,
 } from '../../config/constants/localStoreKeys';
+import { notesURL } from '../../api/RESTClient/apiConstants';
+import {
+  runGETusers,
+  runPOSTuser,
+  runUpdateUser,
+  runDELETEuser,
+} from '../../api/RESTClient/RESTApi';
 
 export {
+  notesURL,
   LazyListNotes,
   ListWrapper,
   AboutNoteContainer,
   GET_SHARED_POST,
   GET_UPDATE_SHARED_POST,
-  sharedArr,
+  sharedNotes,
   WAHA_NOTES,
   chooseNote,
   callToEditNote,
@@ -46,4 +54,9 @@ export {
   NOTES_LIST,
   AUTH_LOCAL_DATA,
   AUTH_LOCAL_STATUS,
+  ERROR_MESSAGES,
+  runGETusers,
+  runPOSTuser,
+  runUpdateUser,
+  runDELETEuser,
 };

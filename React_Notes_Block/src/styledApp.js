@@ -2,7 +2,7 @@ import { styled } from '@mui/styles';
 import { Container } from '@material-ui/core';
 import appTheme from './globalStyles';
 
-const AppContainer = styled(
+const AppWrapper = styled(
   Container,
   appTheme
 )({
@@ -14,4 +14,4 @@ const AppContainer = styled(
   boxShadow: `0px 0px 10px ${appTheme.palette.primary.dark}`,
 });
 
-export default AppContainer;
+export default AppWrapper;

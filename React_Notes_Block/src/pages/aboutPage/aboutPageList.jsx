@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
-import MainContainer, { AboutDesc } from './styled';
+import MainWrapper, { AboutDesc } from './styled';
 import { aboutData } from './aboutReceiver';
 
 const AboutPageList = () => (
-  <MainContainer>
+  <MainWrapper>
     <AboutDesc>
       <Typography component='h4' variant='h4' align='center'>
         {aboutData.title}
@@ -14,6 +14,6 @@ const AboutPageList = () => (
         {aboutData.describe}
       </Typography>
     </AboutDesc>
-  </MainContainer>
+  </MainWrapper>
 );
 export default AboutPageList;

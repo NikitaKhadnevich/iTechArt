@@ -2,7 +2,7 @@ import { styled } from '@mui/styles';
 import { Container } from '@material-ui/core';
 import appTheme from '../../globalStyles';
 
-const MainNoteContainer = styled(
+const MainNoteWrapper = styled(
   Container,
   appTheme
 )({
@@ -16,4 +16,4 @@ const MainNoteContainer = styled(
   flexDirection: 'column',
 });
 
-export default MainNoteContainer;
+export default MainNoteWrapper;

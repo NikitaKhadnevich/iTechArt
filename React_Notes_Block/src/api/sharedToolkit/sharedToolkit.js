@@ -6,7 +6,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const initSharedState = {
-  sharedArr: [],
+  sharedNotes: [],
   isShared: false,
   urlPath: '',
 };
@@ -16,10 +16,10 @@ export const notesShare = createSlice({
   initialState: initSharedState,
   reducers: {
     GET_SHARED_POST: (state, action) => {
-      state, (state.sharedArr = [...state.sharedArr, action.payload]);
+      state, (state.sharedNotes = [...state.sharedNotes, action.payload]);
     },
     GET_UPDATE_SHARED_POST: (state, action) => {
-      state, (state.sharedArr = action.payload);
+      state, (state.sharedNotes = action.payload);
     },
   },
 });

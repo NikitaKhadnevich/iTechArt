@@ -39,6 +39,7 @@
   "scripts": {
     "start": "react-scripts start",
     "jSon": "json-server --watch db.json --port 3001",
+    "jSonNotes": "json-server --watch notes.json --port 3100",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

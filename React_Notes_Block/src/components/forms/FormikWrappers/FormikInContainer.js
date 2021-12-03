@@ -28,7 +28,7 @@ const FormikIn = () => {
 
   const { isLoading, error, data, isFetching } = useQuery(
     'GetUsersForAuth',
-    () => fetch(baseURL).then((res) => res.json())
+    () => fetch(baseURL).then((responseUsers) => responseUsers.json())
   );
 
   const formik = useFormik({
@@ -56,17 +56,15 @@ const FormikIn = () => {
   });
 
   return (
-    <>
-      <Container>
-        <SignIn
-          formik={formik}
-          error={error}
-          isLoading={isLoading}
-          isFetching={isFetching}
-          querryData={data}
-        />
-      </Container>
-    </>
+    <Container>
+      <SignIn
+        formik={formik}
+        error={error}
+        isLoading={isLoading}
+        isFetching={isFetching}
+        querryData={data}
+      />
+    </Container>
   );
 };
 

@@ -8,7 +8,7 @@ import {
   Routes,
   Navigate,
 } from 'react-router-dom';
-import AppContainer from './styledApp';
+import AppWrapper from './styledApp';
 
 import {
   MainNotesContainer,
@@ -45,7 +45,7 @@ function App() {
     <>
       <CssBaseline />
       <Router>
-        <AppContainer>
+        <AppWrapper>
           <HeaderNav />
           <Routes>
             <Route path='*' element={<Navigate replace to={notFound} />} />
@@ -88,7 +88,7 @@ function App() {
               }
             />
           </Routes>
-        </AppContainer>
+        </AppWrapper>
       </Router>
     </>
   );

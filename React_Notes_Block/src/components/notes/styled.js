@@ -13,9 +13,8 @@ const ChangeInputShow = styled(
   justifyContent: 'space-between !important',
   marginLeft: '-30px !important important',
 });
-export default ChangeInputShow;
 
-export const ChangeInputHide = styled(
+const ChangeInputHide = styled(
   Box,
   appTheme
 )({
@@ -23,9 +22,11 @@ export const ChangeInputHide = styled(
   maxHeight: '45px',
 });
 
-export const TextAr = styled(
+const TextAr = styled(
   TextField,
   appTheme
 )({
   width: '100%',
 });
+
+export { ChangeInputShow, ChangeInputHide, TextAr };

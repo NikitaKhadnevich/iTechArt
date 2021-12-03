@@ -13,7 +13,7 @@ const GridShared = styled(
 });
 export default GridShared;
 
-export const MainSharedCont = styled(
+export const MainSharedWrapper = styled(
   Container,
   appTheme
 )({

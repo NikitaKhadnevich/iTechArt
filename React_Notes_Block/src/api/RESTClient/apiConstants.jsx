@@ -1,4 +1,5 @@
 const baseURL = 'http://localhost:3001/users';
+const notesURL = 'http://localhost:3100/WAHA_NOTES';
 
 const initSignUpvalue = {
   email: '',
@@ -14,4 +15,4 @@ const initSignInvalue = {
   password: '',
 };
 
-export { baseURL, initSignUpvalue, initSignInvalue };
+export { baseURL, initSignUpvalue, initSignInvalue, notesURL };

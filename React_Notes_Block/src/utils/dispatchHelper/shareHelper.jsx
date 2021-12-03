@@ -1,8 +1,13 @@
+import { parseDateOptions } from '../../config/constants/initNoteData';
+
 const shareHelper = (noteId, currentArray) => {
-  const sortDescription = currentArray.filter((item) => item.id === noteId);
-  const timeNow = new Date().toLocaleString();
-  const [sharedTimeArr] = sortDescription.map((item) => ({
-    ...item,
+  const sortDescription = currentArray.filter(
+    (itemNote) => itemNote.id === noteId
+  );
+
+  const timeNow = new Date().toLocaleString('en-US', parseDateOptions);
+  const [sharedTimeArr] = sortDescription.map((itemNote) => ({
+    ...itemNote,
     sharedTime: timeNow,
   }));
   return sharedTimeArr;

@@ -1,5 +1,5 @@
-const removeShareNote = (noteId, sharedArray) => {
-  const removeNote = sharedArray.filter((item) => item.id !== noteId);
+const removeShareNote = (noteId, sharedNotesay) => {
+  const removeNote = sharedNotesay.filter((itemNote) => itemNote.id !== noteId);
   return removeNote;
 };
 

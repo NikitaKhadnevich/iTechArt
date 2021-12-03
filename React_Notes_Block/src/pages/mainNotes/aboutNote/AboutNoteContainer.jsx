@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import INITIALNOTE from './aboutNoteReceiver';
 import AboutNote from './AboutNote';
 
-const AboutNoteContainer = ({ mainNotes }) => {
+const AboutNoteContainer = ({ noteList }) => {
   const [aboutData, setAboutData] = useState();
   const addDescription = () => {
-    const [sortDescription] = mainNotes.filter(
+    const [sortDescription] = noteList.filter(
       (itemStatus) => itemStatus.isActive
     );
     if (sortDescription) {
@@ -18,18 +18,20 @@ const AboutNoteContainer = ({ mainNotes }) => {
   };
 
   useEffect(() => {
-    addDescription();
-  }, [mainNotes]);
+    if (Array.isArray(noteList)) {
+      addDescription();
+    }
+  }, [noteList]);
 
   return <AboutNote aboutData={aboutData} />;
 };
 
 AboutNoteContainer.propTypes = {
-  mainNotes: PropTypes.string,
+  noteList: PropTypes.string,
 };
 
 AboutNoteContainer.defaultProps = {
-  mainNotes: 'mainNotes',
+  noteList: 'noteList',
 };
 
 export default AboutNoteContainer;
