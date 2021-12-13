@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "email": "init#user",
+      "firstName": "user",
+      "lastName": "user",
+      "birthday": "2020.12.23",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 1
+    },
+    {
+      "email": "vadim-swich@yandex.ru",
+      "firstName": "Vadim",
+      "lastName": "Vadim",
+      "birthday": "2020.12.23",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 2
+    },
+    {
+      "email": "123vadim-swich@yandex.ru",
+      "firstName": "Flu",
+      "lastName": "Vadim",
+      "birthday": "2020.12.23",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 3
+    },
+    {
+      "email": "321vadim-swich@yandex.ru",
+      "firstName": "dasdas",
+      "lastName": "Vadsaddim",
+      "birthday": "2020.12.23",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 4
+    }
+  ]
+}
