@@ -20,7 +20,7 @@ const SignPassword = ({
     type='password'
     autoComplete='new-password'
     error={touched.password && Boolean(errors.password)}
-    helperText={touched.password ? errors.password : ''}
+    helperText={touched.password && errors.password}
     onChange={onChangeAccum.bind(null, 'password')}
     onBlur={handleBlur}
   />
@@ -32,7 +32,7 @@ SignPassword.propTypes = {
   touched: PropTypes.bool,
   onChangeAccum: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.string,
+  errors: PropTypes.bool,
 };
 
 SignPassword.defaultProps = {

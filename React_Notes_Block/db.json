@@ -1,40 +1,46 @@
 {
   "users": [
     {
-      "email": "init#user",
-      "firstName": "user",
-      "lastName": "user",
+      "email": "asc@yandex.ru",
+      "firstName": "Valiriy",
+      "lastName": "Znishenko",
       "birthday": "2020.12.23",
       "password": "1234",
       "confirmPassword": "1234",
+      "sharedNotes": [
+        "http://localhost:3100/WAHA_NOTES/2",
+        "http://localhost:3100/WAHA_NOTES/12",
+        "http://localhost:3100/WAHA_NOTES/5",
+        "http://localhost:3100/WAHA_NOTES/19"
+      ],
       "id": 1
     },
     {
-      "email": "vadim-swich@yandex.ru",
+      "email": "desch@yandex.ru",
+      "firstName": "Anton",
+      "lastName": "Sokolov",
+      "birthday": "2020.12.23",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "sharedNotes": [
+        "http://localhost:3100/WAHA_NOTES/5",
+        "http://localhost:3100/WAHA_NOTES/6",
+        "http://localhost:3100/WAHA_NOTES/5",
+        "http://localhost:3100/WAHA_NOTES/19"
+      ],
+      "id": 2
+    },
+    {
+      "email": "test@yandex.ru",
       "firstName": "Vadim",
       "lastName": "Vadim",
       "birthday": "2020.12.23",
       "password": "1234",
       "confirmPassword": "1234",
-      "id": 2
-    },
-    {
-      "email": "123vadim-swich@yandex.ru",
-      "firstName": "Flu",
-      "lastName": "Vadim",
-      "birthday": "2020.12.23",
-      "password": "1234",
-      "confirmPassword": "1234",
+      "sharedNotes": [
+        "http://localhost:3100/WAHA_NOTES/2"
+      ],
       "id": 3
-    },
-    {
-      "email": "321vadim-swich@yandex.ru",
-      "firstName": "dasdas",
-      "lastName": "Vadsaddim",
-      "birthday": "2020.12.23",
-      "password": "1234",
-      "confirmPassword": "1234",
-      "id": 4
     }
   ]
 }

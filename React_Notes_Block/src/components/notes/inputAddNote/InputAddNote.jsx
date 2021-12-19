@@ -8,15 +8,15 @@ import TextField from '@mui/material/TextField';
 import { FormAddBox, FormAddGrid, GridButton, AddButton } from './styled';
 import { SortNotes } from './inputAddReceiver';
 
-const InputAddNote = ({ formik, setNoteList, noteList }) => {
+const InputAddNote = ({ formik }) => {
   const {
-    errors,
-    touched,
     handleChange,
     isValid,
     setFieldTouched,
     handleBlur,
     handleSubmit,
+    errors,
+    touched,
     values: { title, description },
   } = formik;
 
@@ -38,7 +38,7 @@ const InputAddNote = ({ formik, setNoteList, noteList }) => {
             required
             sx={{ width: '100%' }}
             error={touched.title && Boolean(errors.title)}
-            helperText={touched.title ? errors.title : ''}
+            helperText={touched.title && errors.title}
             onChange={onChangeAccum.bind(null, 'title')}
             onBlur={handleBlur}
           />
@@ -53,13 +53,13 @@ const InputAddNote = ({ formik, setNoteList, noteList }) => {
             required
             sx={{ width: '100%' }}
             error={touched.description && Boolean(errors.description)}
-            helperText={touched.description ? errors.description : ''}
+            helperText={touched.description && errors.description}
             onChange={onChangeAccum.bind(null, 'describe')}
             onBlur={handleBlur}
           />
         </Grid>
         <Grid item xs={12} sm={4} md={2}>
-          <SortNotes setNoteList={setNoteList} noteList={noteList} />
+          <SortNotes />
         </Grid>
         <GridButton item xs={12} sm={8} md={2}>
           <AddButton type='submit'>Add Note</AddButton>

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Page Is it ErrorPage Snap 1`] = `
+<Styled(WithStyles(ForwardRef(Container)))>
+  <Styled(WithStyles(ForwardRef(Container)))>
+    <WithStyles(ForwardRef(Typography))
+      align="center"
+      component="h5"
+      variant="h5"
+    >
+      Something went wrong - 404
+    </WithStyles(ForwardRef(Typography))>
+  </Styled(WithStyles(ForwardRef(Container)))>
+</Styled(WithStyles(ForwardRef(Container)))>
+`;

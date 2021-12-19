@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import MainNotesContainer from './pages/mainNotes/mainNotesContainer';
 import HeaderNav from './pages/header/HeaderNav';
 import SharedWrapper from './pages/sharedNotePage/sharedWrapper';

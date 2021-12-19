@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
@@ -19,7 +20,7 @@ const ButtonSave = ({ id, handleSaveNote, updateDescription }) => (
 
 ButtonSave.propTypes = {
   handleSaveNote: PropTypes.func,
-  updateDescription: PropTypes.string,
+  updateDescription: PropTypes.array,
   id: PropTypes.number,
 };
 ButtonSave.defaultProps = {

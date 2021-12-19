@@ -21,8 +21,12 @@ export const notesShare = createSlice({
     GET_UPDATE_SHARED_POST: (state, action) => {
       state, (state.sharedNotes = action.payload);
     },
+    IS_SHARED: (state, action) => {
+      state, (state.isShared = action.payload);
+    },
   },
 });
 
 export default notesShare.reducer;
-export const { GET_SHARED_POST, GET_UPDATE_SHARED_POST } = notesShare.actions;
+export const { GET_SHARED_POST, GET_UPDATE_SHARED_POST, IS_SHARED } =
+  notesShare.actions;

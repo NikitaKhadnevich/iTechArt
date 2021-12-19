@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputAddNote Is it InputAddNote Exist 1`] = `
+<Styled(ForwardRef(Box))
+  component="form"
+  onSubmit={[MockFunction]}
+>
+  <Styled(ForwardRef(Grid))
+    container={true}
+    item={true}
+    md={9}
+    sm={10}
+    spacing={1}
+    xs={12}
+  >
+    <ForwardRef(Grid)
+      alignItems="center"
+      item={true}
+      md={3}
+      sm={4}
+      xs={12}
+    >
+      <ForwardRef(TextField)
+        error={true}
+        helperText="are title Error"
+        id="title"
+        label="Title"
+        onBlur={[MockFunction]}
+        onChange={[Function]}
+        required={true}
+        size="small"
+        sx={
+          Object {
+            "width": "100%",
+          }
+        }
+        value="some title"
+        variant="filled"
+      />
+    </ForwardRef(Grid)>
+    <ForwardRef(Grid)
+      item={true}
+      md={5}
+      sm={8}
+      xs={12}
+    >
+      <ForwardRef(TextField)
+        error={true}
+        helperText="are description Error"
+        id="description"
+        label="Describe"
+        onBlur={[MockFunction]}
+        onChange={[Function]}
+        required={true}
+        size="small"
+        sx={
+          Object {
+            "width": "100%",
+          }
+        }
+        value="some description"
+        variant="filled"
+      />
+    </ForwardRef(Grid)>
+    <ForwardRef(Grid)
+      item={true}
+      md={2}
+      sm={4}
+      xs={12}
+    >
+      <SortNotes />
+    </ForwardRef(Grid)>
+    <Styled(ForwardRef(Grid))
+      item={true}
+      md={2}
+      sm={8}
+      xs={12}
+    >
+      <Styled(WithStyles(ForwardRef(Button)))
+        type="submit"
+      >
+        Add Note
+      </Styled(WithStyles(ForwardRef(Button)))>
+    </Styled(ForwardRef(Grid))>
+  </Styled(ForwardRef(Grid))>
+</Styled(ForwardRef(Box))>
+`;

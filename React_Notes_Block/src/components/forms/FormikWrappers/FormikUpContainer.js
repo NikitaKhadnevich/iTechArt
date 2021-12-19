@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Container } from '@material-ui/core';
-import { useQuery, useMutation } from 'react-query';
+import { useMutation } from 'react-query';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import { isValid } from 'date-fns';
@@ -15,23 +15,26 @@ import {
   SET_SIGNUP_ERROR,
   ERROR_MESSAGES,
   runPOSTuser,
-  baseURL,
+  USERS_URL,
   initSignUpvalue,
   signIn,
+  useQueryWrapper,
+  GetUsersSignUp,
 } from '../formsReceiver';
 
 const FormikUp = () => {
   const dispatch = useDispatch();
   const navToAuth = useNavigate();
-  const [isFetch, setFetch] = useState(true);
   const { hasAlready } = ERROR_MESSAGES;
   const MIN_ARR_LENGTH = 1;
 
-  const { isLoading, error, data, isFetching } = useQuery('GetUsers', () =>
-    fetch(baseURL).then((responseUsers) => responseUsers.json())
+  const { isLoading, error, data, isFetching } = useQueryWrapper(
+    GetUsersSignUp,
+    USERS_URL
   );
-  const { mutateAsync } = useMutation(
-    (formdata) => runPOSTuser(baseURL, formdata),
+
+  const signUpMutate = useMutation(
+    (formdata) => runPOSTuser(USERS_URL, formdata),
     {
       onSuccess: () => {
         navToAuth(signIn);
@@ -50,7 +53,7 @@ const FormikUp = () => {
       }
       if (existUser.length < MIN_ARR_LENGTH) {
         dispatch(SET_SIGNUP_ERROR(false));
-        mutateAsync(values);
+        signUpMutate.mutateAsync(values);
         actions.resetForm();
       }
     },
@@ -61,7 +64,6 @@ const FormikUp = () => {
       <SignUp
         formik={formik}
         hasAlready={hasAlready}
-        setFetch={setFetch} // Will make fetch onSubmit Click. In future
         error={error}
         isLoading={isLoading}
         isFetching={isFetching}

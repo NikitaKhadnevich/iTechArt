@@ -16,13 +16,13 @@ import SignUpGrid from './SignInputs/SignUpGrid';
 export default function SignUp({ formik, hasAlready, isFetching, isLoading }) {
   const signUpError = useSelector(isSignUpError);
   const {
-    values,
     errors,
     touched,
     handleChange,
     isValid,
     setFieldTouched,
     handleBlur,
+    values,
     handleSubmit,
   } = formik;
 

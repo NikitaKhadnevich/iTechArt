@@ -1,55 +1,48 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useQueryClient } from 'react-query';
 import { Box } from '@material-ui/core';
-import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
-import { useMutation } from 'react-query';
 import InputAddNote from '../InputAddNote';
 import {
   validationADDNOTE,
   initAddNoteValue,
   parseDateOptions,
-  runPOSTuser,
-  notesURL,
+  NOTES_URL,
+  notesList,
+  usePostWrapper,
+  PostNote,
+  InfiniteNotes,
 } from '../inputAddReceiver';
 
-const FormikAddNoteContainer = ({ setNoteList, noteList }) => {
-  const addNoteMutation = useMutation('PostNote', (newNote) =>
-    runPOSTuser(notesURL, newNote)
-  );
+const FormikAddNoteContainer = () => {
+  const queryClient = useQueryClient();
+
+  const { mutateAsync } = usePostWrapper(PostNote, NOTES_URL);
+
   const formik = useFormik({
     initialValues: initAddNoteValue,
     validationSchema: validationADDNOTE,
     onSubmit: (values, { resetForm }) => {
+      const newUserId = Date.now().toString().slice(-4);
       const mutableValues = {
-        id: Math.random().toFixed(3) * noteList.length,
         ...values,
+        id: (newUserId - notesList.length).toString(),
         date: new Date().toLocaleString('en-US', parseDateOptions),
       };
-      setNoteList([mutableValues, ...noteList]);
       resetForm();
-      addNoteMutation.mutate(mutableValues);
+      mutateAsync(mutableValues);
+      queryClient.refetchQueries(InfiniteNotes, { exact: true });
     },
   });
 
   return (
     <Box>
-      <InputAddNote
-        formik={formik}
-        setNoteList={setNoteList}
-        noteList={noteList}
-      />
+      <InputAddNote formik={formik} />
     </Box>
   );
 };
 
 export default FormikAddNoteContainer;
-
-FormikAddNoteContainer.propTypes = {
-  setNoteList: PropTypes.func,
-  noteList: PropTypes.string,
-};
-
-FormikAddNoteContainer.defaultProps = {
-  setNoteList: 'setNoteList',
-  noteList: 'noteList',
-};
