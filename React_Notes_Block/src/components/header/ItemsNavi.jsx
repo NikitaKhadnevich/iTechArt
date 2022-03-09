@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Typography } from '@material-ui/core';
@@ -8,12 +9,15 @@ import {
   signUp,
   signIn,
   isSignIn,
+  userData,
 } from './headerReceiver';
 
 import { Navigation, NavLink, SignBox } from './styled';
 
 const ItemsNavi = () => {
   const userIsSignIn = useSelector(isSignIn);
+  const sharedNotesLength = useSelector(userData);
+  const SHARED_COUNT = 0;
 
   return (
     <Navigation>
@@ -23,7 +27,13 @@ const ItemsNavi = () => {
             <Typography variant='h6'>Notes</Typography>
           </NavLink>
           <NavLink to={sharedNotes} data-path={sharedNotes}>
-            <Typography variant='h6'>Shared Notes</Typography>
+            <Typography variant='h6'>
+              Shared Notes (
+              {sharedNotesLength[0]?.sharedNotes
+                ? sharedNotesLength[0]?.sharedNotes.length
+                : SHARED_COUNT}
+              )
+            </Typography>
           </NavLink>
         </>
       )}

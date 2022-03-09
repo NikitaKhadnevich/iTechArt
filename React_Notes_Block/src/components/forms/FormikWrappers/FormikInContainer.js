@@ -13,12 +13,14 @@ import {
   IS_SIGN_IN,
   SET_SIGNIN_ERROR,
   SET_AUTH_USER_DATA,
-  baseURL,
+  USERS_URL,
   initSignInvalue,
   notes,
   setToLocalStorage,
   AUTH_LOCAL_STATUS,
   AUTH_LOCAL_DATA,
+  useQueryWrapper,
+  GetUsersForAuth,
 } from '../formsReceiver';
 
 const FormikIn = () => {
@@ -26,9 +28,9 @@ const FormikIn = () => {
   const MIN_ARR_LENGTH = 1;
   const navToNotes = useNavigate();
 
-  const { isLoading, error, data, isFetching } = useQuery(
-    'GetUsersForAuth',
-    () => fetch(baseURL).then((responseUsers) => responseUsers.json())
+  const { isLoading, error, data, isFetching } = useQueryWrapper(
+    GetUsersForAuth,
+    USERS_URL
   );
 
   const formik = useFormik({

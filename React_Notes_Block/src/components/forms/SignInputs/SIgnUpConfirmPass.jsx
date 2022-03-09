@@ -19,7 +19,7 @@ const SignUpConfirmPass = ({
     label='Confirm Password'
     type='password'
     error={touched.confirmPassword && Boolean(errors.confirmPassword)}
-    helperText={touched.confirmPassword ? errors.confirmPassword : ''}
+    helperText={touched.confirmPassword && errors.confirmPassword}
     onChange={onChangeAccum.bind(null, 'confirmPassword')}
     onBlur={handleBlur}
   />

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-typos */
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -15,7 +16,7 @@ const SignEmail = ({ email, touched, onChangeAccum, handleBlur, errors }) => (
     label='Email Address'
     autoComplete='email'
     error={touched.email && Boolean(errors.email)}
-    helperText={touched.email ? errors.email : ''}
+    helperText={touched.email && errors.email}
     onChange={onChangeAccum.bind(null, 'email')}
     onBlur={handleBlur}
   />
@@ -28,7 +29,7 @@ SignEmail.propTypes = {
   touched: PropTypes.bool,
   onChangeAccum: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.string,
+  errors: PropTypes.bool,
 };
 
 SignEmail.defaultProps = {

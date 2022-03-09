@@ -1,6 +1,6 @@
 import validationSchema from '../../utils/signHelper/Schemas/valid_UP';
 import validationIN from '../../utils/signHelper/Schemas/valid_IN';
-import { runGETusers, runPOSTuser } from '../../api/RESTClient/RESTApi';
+import { runGETusers, runPOSTuser } from '../../api/_RESTClient/RESTApi';
 import {
   SET_AUTH_USER_DATA,
   IS_SIGN_IN,
@@ -18,16 +18,23 @@ import {
 } from '../../api/signToolkit/signSelectors';
 import ERROR_MESSAGES from '../../config/constants/errorMessages';
 import {
-  baseURL,
+  USERS_URL,
   initSignUpvalue,
   initSignInvalue,
-} from '../../api/RESTClient/apiConstants';
+} from '../../api/_RESTClient/apiConstants';
 import Spinner from '../spinner/spinner';
 import ROUTERS from '../../config/routers/routers';
 import {
   setToLocalStorage,
   getToLocalStorage,
 } from '../../utils/localStorage/SetGetLocStor';
+import { useQueryWrapper } from '../../api/auth/useQueryWrapper';
+import {
+  GetUsersForAuth,
+  InfiniteNotes,
+  GetUsersSignUp,
+  isAuthUser,
+} from '../../config/constants/queryKeys';
 
 import {
   AUTH_LOCAL_STATUS,
@@ -47,6 +54,8 @@ import SignInError from './SignAvatars/SignInError';
 import SignInInfo from './SignAvatars/SignInInfo';
 import SignInMessage from './SignAvatars/SignInMessage';
 
+import { usePostWrapper } from '../../api/auth/useMutationWrapper';
+
 const { signIn, signUp, notes, about } = ROUTERS;
 
 export {
@@ -64,7 +73,7 @@ export {
   isSignUpError,
   runGETusers,
   runPOSTuser,
-  baseURL,
+  USERS_URL,
   signIn,
   signUp,
   notes,
@@ -89,4 +98,10 @@ export {
   SignInError,
   SignInInfo,
   SignInMessage,
+  useQueryWrapper,
+  InfiniteNotes,
+  GetUsersForAuth,
+  GetUsersSignUp,
+  isAuthUser,
+  usePostWrapper,
 };

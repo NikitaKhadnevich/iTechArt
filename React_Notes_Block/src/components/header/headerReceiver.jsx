@@ -26,6 +26,14 @@ import {
   AUTH_LOCAL_STATUS,
 } from '../../config/constants/localStoreKeys';
 
+import {
+  SET_NOTES_LIST,
+  SET_USERS_LIST,
+  SET_INFINITE_FETCH_COUNTER,
+} from '../../api/notesToolkit/notesToolkit';
+
+import { InfiniteNotes } from '../../config/constants/queryKeys';
+
 const { notes, notFound, sharedNotes, about, signUp, signIn } = ROUTERS;
 
 export {
@@ -43,9 +51,13 @@ export {
   SET_SIGNUP_ERROR,
   SET_SIGNIN_ERROR,
   GET_SIGN_OUT,
+  SET_NOTES_LIST,
+  SET_USERS_LIST,
+  SET_INFINITE_FETCH_COUNTER,
   isSignInError,
   setToLocalStorage,
   getToLocalStorage,
   AUTH_LOCAL_DATA,
   AUTH_LOCAL_STATUS,
+  InfiniteNotes,
 };

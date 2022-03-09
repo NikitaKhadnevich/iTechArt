@@ -11,21 +11,17 @@ import {
   Description,
 } from '../styled';
 
-const ListNoteStatus = ({
-  handleItem,
-  chooseNote,
-  sliceDescription,
-  noteList,
-  noteItem,
-}) => (
+import { chooseNote, sliceDescription } from '../ListNotesReceiver';
+
+const ListNoteStatus = ({ handleItem, noteList, noteItem }) => (
   <>
     {noteItem.isActive ? (
       <ListActive
         onClick={() => handleItem(noteItem.id, noteList, chooseNote)}
         sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
-        key={`${noteItem.id}gridlist`}
+        key={`${noteItem.id}_gridlist`}
       >
-        <NoteText key={`${noteItem.id}listbox`}>
+        <NoteText key={`${noteItem.id}_listbox`}>
           <ListItem>
             <Title variant='h6' id={noteItem.title}>
               {noteItem.title}
@@ -52,7 +48,7 @@ const ListNoteStatus = ({
         sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
         key={`${noteItem.id}gridlistNoActive`}
       >
-        <NoteText key={`${noteItem.id}listboxNoActive`}>
+        <NoteText key={`${noteItem.id}_listboxNoActive`}>
           <ListItem>
             <Title variant='h6' id={noteItem.title}>
               {noteItem.title}
@@ -76,15 +72,11 @@ export default ListNoteStatus;
 ListNoteStatus.propTypes = {
   noteList: PropTypes.string,
   noteItem: PropTypes.string,
-  sliceDescription: PropTypes.func,
-  chooseNote: PropTypes.func,
   handleItem: PropTypes.func,
 };
 
 ListNoteStatus.defaultProps = {
   noteList: 'noteList',
   noteItem: 'noteItem',
-  sliceDescription: 'sliceDescription',
-  chooseNote: 'chooseNote',
   handleItem: 'handleItem',
 };

@@ -4,6 +4,7 @@ const initAddNoteValue = {
   sharedTime: '',
   isChange: false,
   isActive: false,
+  isShared: false,
 };
 
 export default initAddNoteValue;

@@ -1,4 +1,4 @@
-const getSortNotesDate = (asc, desc, currentNoteState, stateChanger) => {
+const getSortNotesDate = (asc, desc, currentNoteState) => {
   const sortNote = [...currentNoteState];
   sortNote.sort((a, b) => {
     const notesDateA = Date.parse(a.date);
@@ -11,10 +11,10 @@ const getSortNotesDate = (asc, desc, currentNoteState, stateChanger) => {
     }
     return 0;
   });
-  stateChanger(sortNote);
+  return sortNote;
 };
 
-const getSortNotesTitle = (asc, desc, currentNoteState, stateChanger) => {
+const getSortNotesTitle = (asc, desc, currentNoteState) => {
   const sortNote = [...currentNoteState];
   sortNote.sort((a, b) => {
     const notesTitleA = a.title;
@@ -27,7 +27,7 @@ const getSortNotesTitle = (asc, desc, currentNoteState, stateChanger) => {
     }
     return 0;
   });
-  stateChanger(sortNote);
+  return sortNote;
 };
 
 export { getSortNotesDate, getSortNotesTitle };

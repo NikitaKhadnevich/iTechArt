@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Is it ItemsNavi User Sign In And has Shared Notes 1`] = `
+<Styled(Styled(MuiBox))>
+  <Styled(Link)
+    data-path="/notes"
+    to="/notes"
+  >
+    <WithStyles(ForwardRef(Typography))
+      variant="h6"
+    >
+      Notes
+    </WithStyles(ForwardRef(Typography))>
+  </Styled(Link)>
+  <Styled(Link)
+    data-path="/shared-notes"
+    to="/shared-notes"
+  >
+    <WithStyles(ForwardRef(Typography))
+      variant="h6"
+    >
+      Shared Notes (
+      5
+      )
+    </WithStyles(ForwardRef(Typography))>
+  </Styled(Link)>
+  <Styled(Link)
+    data-path="/about"
+    to="/about"
+  >
+    <WithStyles(ForwardRef(Typography))
+      variant="h6"
+    >
+      About
+    </WithStyles(ForwardRef(Typography))>
+  </Styled(Link)>
+</Styled(Styled(MuiBox))>
+`;

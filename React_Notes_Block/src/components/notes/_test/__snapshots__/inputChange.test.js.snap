@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputChange Is it InputChange Form Exist 1`] = `
+<ForwardRef(Zoom)
+  in={true}
+>
+  <Styled(ForwardRef(Box))>
+    <Styled(ForwardRef(TextField))
+      defaultValue="some descriprion"
+      label="Note Description"
+      multiline={true}
+      onChange={[Function]}
+      rows={2}
+      variant="standard"
+    />
+    <ForwardRef(Box)>
+      <ButtonSave
+        handleSaveNote={[MockFunction]}
+        id={2}
+        updateDescription="some descriprion"
+      />
+      <ButtonDelete
+        handleDelete={[MockFunction]}
+        id={2}
+        index={1}
+      />
+    </ForwardRef(Box)>
+  </Styled(ForwardRef(Box))>
+</ForwardRef(Zoom)>
+`;

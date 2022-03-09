@@ -1,7 +1,7 @@
 import React from 'react';
 import loadable from '@loadable/component';
-import { Spiner } from './aboutReceiver';
+import { Spinner } from './aboutReceiver';
 
 export default loadable(() => import('./aboutPageList'), {
-  fallback: <Spiner />,
+  fallback: <Spinner />,
 });

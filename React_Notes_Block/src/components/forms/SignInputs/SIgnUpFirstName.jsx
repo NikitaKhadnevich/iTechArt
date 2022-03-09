@@ -21,7 +21,7 @@ const SignUpFirstName = ({
     label='First Name'
     autoComplete='firstName'
     error={touched.firstName && Boolean(errors.firstName)}
-    helperText={touched.firstName ? errors.firstName : ''}
+    helperText={touched.firstName && errors.firstName}
     onChange={onChangeAccum.bind(null, 'firstName')}
     onBlur={handleBlur}
   />
@@ -34,7 +34,7 @@ SignUpFirstName.propTypes = {
   touched: PropTypes.bool,
   onChangeAccum: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.string,
+  errors: PropTypes.bool,
 };
 
 SignUpFirstName.defaultProps = {

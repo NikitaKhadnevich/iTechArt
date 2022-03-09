@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -39,12 +40,7 @@ const InputChange = ({
               handleSaveNote={handleSaveNote}
               id={id}
             />
-            <ButtonDelete
-              handleDelete={handleDelete}
-              index={index}
-              id={id}
-              currentState={currentState}
-            />
+            <ButtonDelete handleDelete={handleDelete} index={index} id={id} />
           </Box>
         </ChangeInputShow>
       ) : (
@@ -85,7 +81,7 @@ InputChange.propTypes = {
   id: PropTypes.number,
   index: PropTypes.number,
   handleDelete: PropTypes.func,
-  currentState: PropTypes.string,
+  currentState: PropTypes.array,
 };
 
 InputChange.defaultProps = {

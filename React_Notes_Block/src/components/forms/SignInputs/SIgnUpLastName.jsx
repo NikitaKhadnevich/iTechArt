@@ -19,7 +19,7 @@ const SignUpLastName = ({
     label='Last Name'
     autoComplete='given-name'
     error={touched.lastName && Boolean(errors.lastName)}
-    helperText={touched.lastName ? errors.lastName : ''}
+    helperText={touched.lastName && errors.lastName}
     onChange={onChangeAccum.bind(null, 'lastName')}
     onBlur={handleBlur}
   />
@@ -31,7 +31,7 @@ SignUpLastName.propTypes = {
   touched: PropTypes.bool,
   onChangeAccum: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.string,
+  errors: PropTypes.bool,
 };
 
 SignUpLastName.defaultProps = {

@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn Is it SignIn Exist and Loaded  1`] = `
+<Styled(ForwardRef(Container))
+  component="main"
+>
+  <Styled(ForwardRef(Box))>
+    <SignInInfo
+      welcomeSignIn="Hello, Let's auth"
+    />
+    <Styled(ForwardRef(Box))
+      component="form"
+      noValidate={true}
+      onSubmit={[MockFunction]}
+      sx={
+        Object {
+          "mt": 3,
+        }
+      }
+    >
+      <Styled(ForwardRef(Grid))
+        container={true}
+        spacing={2}
+      >
+        <ForwardRef(Grid)
+          item={true}
+          xs={12}
+        >
+          <SignEmail
+            email="email"
+            errors={false}
+            handleBlur={[MockFunction]}
+            onChangeAccum={[Function]}
+            touched={false}
+          />
+        </ForwardRef(Grid)>
+        <ForwardRef(Grid)
+          item={true}
+          xs={12}
+        >
+          <SignPassword
+            errors={false}
+            handleBlur={[MockFunction]}
+            onChangeAccum={[Function]}
+            password="password"
+            touched={false}
+          />
+        </ForwardRef(Grid)>
+        <ForwardRef(Grid)
+          item={true}
+          xs={12}
+        >
+          <WithStyles(ForwardRef(Button))
+            color="secondary"
+            disabled={true}
+            fullWidth={true}
+            type="submit"
+            variant="outlined"
+          >
+            Sign In
+          </WithStyles(ForwardRef(Button))>
+        </ForwardRef(Grid)>
+      </Styled(ForwardRef(Grid))>
+    </Styled(ForwardRef(Box))>
+  </Styled(ForwardRef(Box))>
+</Styled(ForwardRef(Container))>
+`;
+
+exports[`SignIn should components data are loading/Fetching 1`] = `
+<Styled(ForwardRef(Container))
+  component="main"
+>
+  <Spinner />
+</Styled(ForwardRef(Container))>
+`;

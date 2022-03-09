@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButonDelete Is it ButonDelete Exist 1`] = `
+<Fragment>
+  <ForwardRef(Stack)
+    alignItems="center"
+    direction="row"
+    spacing={0.5}
+  >
+    <ForwardRef(IconButton)
+      aria-label="delete"
+      color="primary"
+      onClick={[Function]}
+    >
+      <Memo(ForwardRef(DeleteIcon)) />
+    </ForwardRef(IconButton)>
+  </ForwardRef(Stack)>
+</Fragment>
+`;

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp Is it SignUp Exist and Loaded  1`] = `
+<Styled(ForwardRef(Container))
+  component="main"
+>
+  <Styled(ForwardRef(Box))>
+    <SignUpSuccess />
+    <Styled(ForwardRef(Box))
+      component="form"
+      noValidate={true}
+      onSubmit={[MockFunction]}
+      sx={
+        Object {
+          "mt": 3,
+        }
+      }
+    >
+      <SignUpGrid
+        errors={false}
+        handleBlur={[MockFunction]}
+        isValid={false}
+        onChangeAccum={[Function]}
+        touched={false}
+        values={
+          Object {
+            "birthday": "",
+            "confirmPassword": "",
+            "email": "",
+            "firstName": "",
+            "lastName": "",
+            "password": "",
+            "sharedNotes": Array [],
+          }
+        }
+      />
+    </Styled(ForwardRef(Box))>
+  </Styled(ForwardRef(Box))>
+</Styled(ForwardRef(Container))>
+`;
+
+exports[`SignUp should components data are loading/Fetching 1`] = `
+<Styled(ForwardRef(Container))
+  component="main"
+>
+  <Spinner />
+</Styled(ForwardRef(Container))>
+`;

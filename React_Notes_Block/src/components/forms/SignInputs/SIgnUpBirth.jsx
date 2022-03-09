@@ -20,9 +20,7 @@ const SignUpBirth = ({
     label='Date of Birth (yyyy.mm.dd)'
     error={touched.birthday && Boolean(errors.birthday)}
     helperText={
-      touched.birthday && birthday.length > MIN_LENGTH_BIRTH
-        ? errors.birthday
-        : ''
+      touched.birthday && birthday.length > MIN_LENGTH_BIRTH && errors.birthday
     }
     onChange={onChangeAccum.bind(null, 'birthday')}
     onBlur={handleBlur}

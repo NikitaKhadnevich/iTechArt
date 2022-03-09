@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn Is it SignUp Form Exist 1`] = `
+<Styled(ForwardRef(Grid))
+  container={true}
+  spacing={2}
+>
+  <ForwardRef(Grid)
+    item={true}
+    xs={12}
+  >
+    <SignEmail
+      email="email"
+      errors={false}
+      handleBlur={[MockFunction]}
+      onChangeAccum="onChangeAccum"
+      touched={false}
+    />
+  </ForwardRef(Grid)>
+  <ForwardRef(Grid)
+    item={true}
+    sm={6}
+    xs={12}
+  >
+    <SignUpFirstName
+      errors={false}
+      firstName="firstName"
+      handleBlur={[MockFunction]}
+      onChangeAccum="onChangeAccum"
+      touched={false}
+    />
+  </ForwardRef(Grid)>
+  <ForwardRef(Grid)
+    item={true}
+    sm={6}
+    xs={12}
+  >
+    <SignUpLastName
+      errors={false}
+      handleBlur={[MockFunction]}
+      lastName="lastName"
+      onChangeAccum="onChangeAccum"
+      touched={false}
+    />
+  </ForwardRef(Grid)>
+  <ForwardRef(Grid)
+    item={true}
+    xs={12}
+  >
+    <SignUpBirth
+      birthday="birthday"
+      errors={false}
+      handleBlur={[MockFunction]}
+      onChangeAccum="onChangeAccum"
+      touched={false}
+    />
+  </ForwardRef(Grid)>
+  <ForwardRef(Grid)
+    item={true}
+    xs={12}
+  >
+    <SignPassword
+      errors={false}
+      handleBlur={[MockFunction]}
+      onChangeAccum="onChangeAccum"
+      password="password"
+      touched={false}
+    />
+  </ForwardRef(Grid)>
+  <ForwardRef(Grid)
+    item={true}
+    xs={12}
+  >
+    <SignUpConfirmPass
+      confirmPassword="confirmPassword"
+      errors={false}
+      handleBlur={[MockFunction]}
+      onChangeAccum="onChangeAccum"
+      touched={false}
+    />
+  </ForwardRef(Grid)>
+  <ForwardRef(Grid)
+    item={true}
+    xs={12}
+  >
+    <WithStyles(ForwardRef(Button))
+      color="secondary"
+      disabled={true}
+      fullWidth={true}
+      type="submit"
+      variant="outlined"
+    >
+      Sign Up
+    </WithStyles(ForwardRef(Button))>
+  </ForwardRef(Grid)>
+</Styled(ForwardRef(Grid))>
+`;

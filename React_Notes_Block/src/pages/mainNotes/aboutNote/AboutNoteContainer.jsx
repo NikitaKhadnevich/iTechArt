@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { INITIALNOTE, notesList } from './aboutNoteReceiver';
 
-import INITIALNOTE from './aboutNoteReceiver';
 import AboutNote from './AboutNote';
 
-const AboutNoteContainer = ({ noteList }) => {
+const AboutNoteContainer = () => {
+  const noteList = useSelector(notesList);
   const [aboutData, setAboutData] = useState();
   const addDescription = () => {
     const [sortDescription] = noteList.filter(
@@ -24,14 +25,6 @@ const AboutNoteContainer = ({ noteList }) => {
   }, [noteList]);
 
   return <AboutNote aboutData={aboutData} />;
-};
-
-AboutNoteContainer.propTypes = {
-  noteList: PropTypes.string,
-};
-
-AboutNoteContainer.defaultProps = {
-  noteList: 'noteList',
 };
 
 export default AboutNoteContainer;
